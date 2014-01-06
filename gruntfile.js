@@ -27,6 +27,10 @@ module.exports = function(grunt) {
             precure: {
                 src: files,
                 dest: 'build/precure.js'
+            },
+            node: {
+                src: files.concat(['src/for-node.js']),
+                dest: 'build/precure-node.js'
             }
         },
 
@@ -34,6 +38,11 @@ module.exports = function(grunt) {
             precure: {
                 files: {
                     'build/precure.min.js': ['build/precure.js']
+                }
+            },
+            node: {
+                files: {
+                    'build/precure-node.min.js': ['build/precure-node.js']
                 }
             }
         },
