@@ -1,0 +1,23 @@
+{
+  "name": "precure.js",
+  "version": "0.0.1",
+  "description": "All about Japanese battle heroine \"Pretty Cure (Precure)\"",
+  "main": "main.js",
+  "scripts": {
+    "test": "grunt jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://tomcat.dev7.jp/gitbucket/git/daishi/precure.git"
+  },
+  "author": "daishi_hmr",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-jasmine": "~0.5.2",
+    "grunt-jsdoc": "~0.5.1"
+  }
+}
