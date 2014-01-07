@@ -64,7 +64,7 @@ describe("test suite", function() {
         expect(girl.precureName).toEqual("キュアミューズ");
 
         expect(girl.state).toEqual(0);
-        expect(girl.name).toEqual("月影ゆり");
+        expect(girl.name).toEqual("調辺アコ");
 
         girl.transform();
 

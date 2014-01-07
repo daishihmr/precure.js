@@ -80,7 +80,7 @@ precure.Girl.prototype.humanize = function() {
 };
 
 /**
- * stateが変化した時に呼びます。
+ * stateが変化した時に呼びだされます。
  *
  * @private
  * @methodOf precure.Girl
@@ -97,6 +97,6 @@ precure.Girl.prototype._updateState = function() {
  * @constructor
  */
 precure.PartnerInvalidError = function() {};
-precure.PartnerInvalidError.prototype = new Error();
+precure.PartnerInvalidError.prototype = new Error("partner is invalid.");
 
 })();
