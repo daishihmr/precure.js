@@ -10,7 +10,10 @@ Usage
 
 ~~~
 
-> var precure = require('precure-node.js').precure
+$ npm install precure.js
+$ node
+
+> var precure = require('precure.js').precure
 
 > var mh = precure.maxheart;
 > mh.title
@@ -28,6 +31,9 @@ Mon Mar 05 2012 00:00:00 GMT+0900 (東京 (標準時))
 
 > f.girls[0].transform()
 'プリキュア・メタモルフォーゼ！\n大いなる希望の力！キュアドリーム！'
+
+> f.girls[0].name
+'キュアドリーム'
 
 > var p = precure.suite;
 > p.girls[0].name
