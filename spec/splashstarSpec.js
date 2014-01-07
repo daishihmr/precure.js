@@ -1,4 +1,9 @@
 describe("test splashstar", function() {
+    beforeEach(function() {
+        precure.splashstar.girls.forEach(function(girl) {
+            girl.humanize();
+        });
+    });
 
     it("S☆Sの1人目", function() {
         var girl = precure.splashstar.girls[0];
@@ -9,20 +14,12 @@ describe("test splashstar", function() {
         expect(girl.state).toEqual(0);
         expect(girl.name).toEqual("日向咲");
 
-        try {
-            girl.transform();
-        } catch (e) {
-            expect(e instanceof precure.PartnerInvalidError).toBe(true);
-        }
-
-        expect(girl.state).toEqual(0);
-
-        girl.transform("美翔舞");
+        girl.transform(precure.splashstar.girls[1]);
 
         expect(girl.state).toEqual(1);
         expect(girl.name).toEqual("キュアブルーム");
 
-        girl.transform("美翔舞");
+        girl.transform(precure.splashstar.girls[1]);
 
         expect(girl.state).toEqual(2);
         expect(girl.name).toEqual("キュアブライト");
@@ -37,20 +34,12 @@ describe("test splashstar", function() {
         expect(girl.state).toEqual(0);
         expect(girl.name).toEqual("美翔舞");
 
-        try {
-            girl.transform();
-        } catch (e) {
-            expect(e instanceof precure.PartnerInvalidError).toBe(true);
-        }
-
-        expect(girl.state).toEqual(0);
-
-        girl.transform("日向咲");
+        girl.transform(precure.splashstar.girls[0]);
 
         expect(girl.state).toEqual(1);
         expect(girl.name).toEqual("キュアイーグレット");
 
-        girl.transform("日向咲");
+        girl.transform(precure.splashstar.girls[0]);
 
         expect(girl.state).toEqual(2);
         expect(girl.name).toEqual("キュアウィンディ");
