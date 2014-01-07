@@ -1,8 +1,8 @@
 {
   "name": "precure.js",
-  "version": "0.0.1",
+  "version": "1.1.1",
   "description": "All about Japanese battle heroine \"Pretty Cure (Precure)\"",
-  "main": "main.js",
+  "main": "./build/precure-node.js",
   "scripts": {
     "test": "grunt jasmine"
   },
