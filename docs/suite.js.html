@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: unmarked.js</title>
+    <title>JSDoc: Source: suite.js</title>
     
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Source: unmarked.js</h1>
+    <h1 class="page-title">Source: suite.js</h1>
     
     
 
@@ -28,33 +28,49 @@
             <pre class="prettyprint source"><code>(function() {
 
 /**
- * ふたりはプリキュア
+ * スイートプリキュア♪
  *
  * @constant
  * @type precure.Series
  */
-precure.unmarked = new precure.Series("ふたりはプリキュア", new Date(2004, 2, 1), new Date(2005, 1, 30));
+precure.suite = new precure.Series("スイートプリキュア♪", new Date(2011, 2, 6), new Date(2012, 1, 29));
 
-var msg = "デュアル・オーロラ・ウェイブ！\n光の使者キュアブラック！\n光の使者キュアホワイト！\nふたりはプリキュア！";
-
-var black = new precure.Girl([
-    "美墨なぎさ",
-    "キュアブラック"
+var hibiki = new precure.Girl([
+    "北条響",
+    "キュアメロディ"
 ], [
     null,
-    msg
-], "雪城ほのか");
+    "レッツプレイ！プリキュア・モジュレーション！\n爪弾くは荒ぶる調べ！キュアメロディ！"
+], "南野奏");
 
-var white = new precure.Girl([
-    "雪城ほのか",
-    "キュアホワイト"
+var kanade = new precure.Girl([
+    "南野奏",
+    "キュアリズム"
 ], [
     null,
-    msg
-], "美墨なぎさ");
+    "レッツプレイ！プリキュア・モジュレーション！\n爪弾くはたおやかな調べ！キュアリズム！"
+], "北条響");
 
-precure.unmarked.girls[0] = black;
-precure.unmarked.girls[1] = white;
+var ellen = new precure.Girl([
+    "黒川エレン",
+    "キュアビート"
+], [
+    null,
+    "レッツプレイ！プリキュア・モジュレーション！\n爪弾くは魂の調べ！キュアビート！"
+]);
+
+var ako = new precure.Girl([
+    "調辺アコ",
+    "キュアミューズ"
+], [
+    null,
+    "レッツプレイ！プリキュア・モジュレーション！\n爪弾くは女神の調べ！キュアミューズ！"
+]);
+
+precure.suite.girls[0] = hibiki;
+precure.suite.girls[1] = kanade;
+precure.suite.girls[2] = ellen;
+precure.suite.girls[3] = ako;
 
 })();
 </code></pre>

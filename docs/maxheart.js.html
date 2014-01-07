@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: unmarked.js</title>
+    <title>JSDoc: Source: maxheart.js</title>
     
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Source: unmarked.js</h1>
+    <h1 class="page-title">Source: maxheart.js</h1>
     
     
 
@@ -28,14 +28,14 @@
             <pre class="prettyprint source"><code>(function() {
 
 /**
- * ふたりはプリキュア
+ * ふたりはプリキュア Max Heart
  *
  * @constant
  * @type precure.Series
  */
-precure.unmarked = new precure.Series("ふたりはプリキュア", new Date(2004, 2, 1), new Date(2005, 1, 30));
+precure.maxheart = new precure.Series("ふたりはプリキュア Max Heart", new Date(2005, 2, 6), new Date(2006, 1, 29));
 
-var msg = "デュアル・オーロラ・ウェイブ！\n光の使者キュアブラック！\n光の使者キュアホワイト！\nふたりはプリキュア！";
+var msg = "デュアル・オーロラ・ウェイブ！\n光の使者キュアブラック！\n光の使者キュアホワイト！\nふたりはプリキュア！"
 
 var black = new precure.Girl([
     "美墨なぎさ",
@@ -53,8 +53,17 @@ var white = new precure.Girl([
     msg
 ], "美墨なぎさ");
 
-precure.unmarked.girls[0] = black;
-precure.unmarked.girls[1] = white;
+var luminus = new precure.Girl([
+    "九条ひかり",
+    "シャイニールミナス"
+], [
+    null,
+    "ルミナス・シャイニング・ストリーム！\n輝く命！シャイニールミナス！光の心と光の意志、総てをひとつにするために！"
+]);
+
+precure.maxheart.girls[0] = black;
+precure.maxheart.girls[1] = white;
+precure.maxheart.girls[2] = luminus;
 
 })();
 </code></pre>

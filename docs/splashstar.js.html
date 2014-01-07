@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: unmarked.js</title>
+    <title>JSDoc: Source: splashstar.js</title>
     
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Source: unmarked.js</h1>
+    <h1 class="page-title">Source: splashstar.js</h1>
     
     
 
@@ -28,33 +28,39 @@
             <pre class="prettyprint source"><code>(function() {
 
 /**
- * ふたりはプリキュア
+ * ふたりはプリキュア Splash Star
  *
  * @constant
  * @type precure.Series
  */
-precure.unmarked = new precure.Series("ふたりはプリキュア", new Date(2004, 2, 1), new Date(2005, 1, 30));
+precure.splashstar = new precure.Series("ふたりはプリキュア Splash Star", new Date(2006, 2, 5), new Date(2007, 1, 28));
 
-var msg = "デュアル・オーロラ・ウェイブ！\n光の使者キュアブラック！\n光の使者キュアホワイト！\nふたりはプリキュア！";
+var common = "聖なる泉を汚す者よ！\nアコギな真似はおやめなさい！";
+var msg1 = "デュアル・スピリチュアル・パワー！\n花開け、大地に！\n羽ばたけ、空に！\n輝く金の花！キュアブルーム！\n煌く銀の翼！キュアイーグレット！\nふたりはプリキュア！";
+var msg2 = "デュアル・スピリチュアル・パワー！\n未来を照らし！\n勇気を運べ！\n天空に満ちる月！キュアブライト！\n大地に薫る風！キュアウィンディ！\nふたりはプリキュア！";
 
-var black = new precure.Girl([
-    "美墨なぎさ",
-    "キュアブラック"
+var saki = new precure.Girl([
+    "日向咲",
+    "キュアブルーム",
+    "キュアブライト"
 ], [
     null,
-    msg
-], "雪城ほのか");
+    msg1,
+    msg2
+], "美翔舞");
 
-var white = new precure.Girl([
-    "雪城ほのか",
-    "キュアホワイト"
+var mai = new precure.Girl([
+    "美翔舞",
+    "キュアイーグレット",
+    "キュアウィンディ"
 ], [
     null,
-    msg
-], "美墨なぎさ");
+    msg1,
+    msg2
+], "日向咲");
 
-precure.unmarked.girls[0] = black;
-precure.unmarked.girls[1] = white;
+precure.splashstar.girls[0] = saki;
+precure.splashstar.girls[1] = mai;
 
 })();
 </code></pre>

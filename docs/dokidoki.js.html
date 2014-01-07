@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: unmarked.js</title>
+    <title>JSDoc: Source: dokidoki.js</title>
     
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Source: unmarked.js</h1>
+    <h1 class="page-title">Source: dokidoki.js</h1>
     
     
 
@@ -28,33 +28,58 @@
             <pre class="prettyprint source"><code>(function() {
 
 /**
- * ふたりはプリキュア
+ * ドキドキ!プリキュア
  *
  * @constant
  * @type precure.Series
  */
-precure.unmarked = new precure.Series("ふたりはプリキュア", new Date(2004, 2, 1), new Date(2005, 1, 30));
+precure.dokidoki = new precure.Series("ドキドキ!プリキュア", new Date(2013, 2, 3), new Date(2014, 1, 26));
 
-var msg = "デュアル・オーロラ・ウェイブ！\n光の使者キュアブラック！\n光の使者キュアホワイト！\nふたりはプリキュア！";
-
-var black = new precure.Girl([
-    "美墨なぎさ",
-    "キュアブラック"
+var mana = new precure.Girl([
+    "相田マナ",
+    "キュアハート"
 ], [
     null,
-    msg
-], "雪城ほのか");
+    "みなぎる愛！キュアハート！"
+]);
 
-var white = new precure.Girl([
-    "雪城ほのか",
-    "キュアホワイト"
+var rikka = new precure.Girl([
+    "菱川六花",
+    "キュアダイヤモンド"
 ], [
     null,
-    msg
-], "美墨なぎさ");
+    "英知の光！キュアダイヤモンド！"
+]);
 
-precure.unmarked.girls[0] = black;
-precure.unmarked.girls[1] = white;
+var alice = new precure.Girl([
+    "四葉ありす",
+    "キュアロゼッタ"
+], [
+    null,
+    "ひだまりポカポカ！キュアロゼッタ！"
+]);
+
+var makoto = new precure.Girl([
+    "剣崎真琴",
+    "キュアソード"
+], [
+    null,
+    "勇気の刃！キュアソード！"
+]);
+
+var aguri = new precure.Girl([
+    "円亜久里",
+    "キュアエース"
+], [
+    null,
+    "愛の切り札！キュアエース！"
+]);
+
+precure.dokidoki.girls[0] = mana;
+precure.dokidoki.girls[1] = rikka;
+precure.dokidoki.girls[2] = alice;
+precure.dokidoki.girls[3] = makoto;
+precure.dokidoki.girls[4] = aguri;
 
 })();
 </code></pre>

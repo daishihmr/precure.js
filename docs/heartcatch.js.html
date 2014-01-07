@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: unmarked.js</title>
+    <title>JSDoc: Source: heartcatch.js</title>
     
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Source: unmarked.js</h1>
+    <h1 class="page-title">Source: heartcatch.js</h1>
     
     
 
@@ -28,33 +28,49 @@
             <pre class="prettyprint source"><code>(function() {
 
 /**
- * ふたりはプリキュア
+ * ハートキャッチプリキュア!
  *
  * @constant
  * @type precure.Series
  */
-precure.unmarked = new precure.Series("ふたりはプリキュア", new Date(2004, 2, 1), new Date(2005, 1, 30));
+precure.heartcatch = new precure.Series("ハートキャッチプリキュア!", new Date(2010, 2, 7), new Date(2011, 1, 30));
 
-var msg = "デュアル・オーロラ・ウェイブ！\n光の使者キュアブラック！\n光の使者キュアホワイト！\nふたりはプリキュア！";
-
-var black = new precure.Girl([
-    "美墨なぎさ",
-    "キュアブラック"
+var tsubomi = new precure.Girl([
+    "花咲つぼみ",
+    "キュアブロッサム"
 ], [
     null,
-    msg
-], "雪城ほのか");
+    "プリキュア・オープンマイハート！\n大地に咲く一輪の花！キュアブロッサム！"
+]);
 
-var white = new precure.Girl([
-    "雪城ほのか",
-    "キュアホワイト"
+var erika = new precure.Girl([
+    "来海えりか",
+    "キュアマリン"
 ], [
     null,
-    msg
-], "美墨なぎさ");
+    "プリキュア・オープンマイハート！\n海風に揺れる一輪の花！キュアマリン！"
+]);
 
-precure.unmarked.girls[0] = black;
-precure.unmarked.girls[1] = white;
+var itsuki = new precure.Girl([
+    "明堂院いつき",
+    "キュアサンシャイン"
+], [
+    null,
+    "プリキュア・オープンマイハート！\n陽の光浴びる一輪の花！キュアサンシャイン！"
+]);
+
+var yuri = new precure.Girl([
+    "月影ゆり",
+    "キュアムーンライト"
+], [
+    null,
+    "プリキュア・オープンマイハート！\n月光に冴える一輪の花！キュアムーンライト！"
+]);
+
+precure.heartcatch.girls[0] = tsubomi;
+precure.heartcatch.girls[1] = erika;
+precure.heartcatch.girls[2] = itsuki;
+precure.heartcatch.girls[3] = yuri;
 
 })();
 </code></pre>

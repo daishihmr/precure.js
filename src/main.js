@@ -10,9 +10,6 @@ var precure = {};
  *
  * @class
  * @constructor
- * @param {String} title 作品タイトル
- * @param {Date} statedDate 放送開始日時
- * @param {Date} endedDate 放送終了日時
  * @property {String} title 作品タイトル
  * @property {Date} statedDate 放送開始日時
  * @property {Date} endedDate 放送終了日時
@@ -25,13 +22,47 @@ precure.Series = function(title, statedDate, endedDate) {
 };
 
 /**
+ * 作品名リスト
+ *
+ * @static
+ * @memberOf precure.Series
+ * @type {Array.<String>}
+ */
+precure.Series.NAMES = [
+    "unmarked",
+    "maxheart",
+    "splashstar",
+    "five",
+    "fivegogo",
+    "fresh",
+    "heartcatch",
+    "suite",
+    "smile",
+    "dokidoki",
+    "happinesscharge"
+];
+
+/**
+ * 映画オールスターズ作品名リスト
+ *
+ * @static
+ * @memberOf precure.Series
+ * @type {Array.<String>}
+ */
+precure.Series.NAMES = [
+    "dx1",
+    "dx2",
+    "dx3",
+    "ns1",
+    "ns2",
+    "ns3"
+];
+
+/**
  * プリキュアクラス
  *
  * @class
  * @constructor
- * @param {String[]} names 名前のリスト。stateと項番が一致する名前の配列。
- * @param {String[]} transformMessages 変身時メッセージのリストstateと項番が一致する形態への変身時に使用するメッセージの配列
- * @param {String} [partner] パートナーの名前(オプション)
  * @property {String[]} names 名前のリスト。stateと項番が一致する名前の配列。
  * @property {String[]} transformMessages 変身時メッセージのリストstateと項番が一致する形態への変身時に使用するメッセージの配列
  * @property {String} partner パートナーの名前
