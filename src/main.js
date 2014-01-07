@@ -11,12 +11,12 @@ var precure = {};
  * @class
  * @constructor
  * @property {String} title 作品タイトル
- * @property {Date} statedDate 放送開始日時
+ * @property {Date} startedDate 放送開始日時
  * @property {Date} endedDate 放送終了日時
  */
-precure.Series = function(title, statedDate, endedDate) {
+precure.Series = function(title, startedDate, endedDate) {
     this.title = title;
-    this.statedDate = statedDate;
+    this.startedDate = startedDate;
     this.endedDate = endedDate;
     this.girls = [];
 };
