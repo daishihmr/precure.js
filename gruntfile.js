@@ -11,7 +11,8 @@ module.exports = function(grunt) {
         'src/suite.js',
         'src/smile.js',
         'src/dokidoki.js',
-        'src/happinesscharge.js'
+        'src/happinesscharge.js',
+        'src/allstars.js'
     ];
 
     grunt.loadNpmTasks('grunt-contrib-concat');
@@ -27,6 +28,10 @@ module.exports = function(grunt) {
             precure: {
                 src: files,
                 dest: 'build/precure.js'
+            },
+            node: {
+                src: files.concat(['src/node-exports.js']),
+                dest: 'build/precure-node.js'
             }
         },
 
@@ -34,6 +39,11 @@ module.exports = function(grunt) {
             precure: {
                 files: {
                     'build/precure.min.js': ['build/precure.js']
+                }
+            },
+            node: {
+                files: {
+                    'build/precure-node.min.js': ['build/precure-node.js']
                 }
             }
         },

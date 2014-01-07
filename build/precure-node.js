@@ -770,3 +770,5 @@ precure.allStars = [];
 });
 
 })();
+
+exports.precure = precure;
