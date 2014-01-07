@@ -8,12 +8,14 @@
  */
 precure.suite = new precure.Series("スイートプリキュア♪", new Date(2011, 2, 6), new Date(2012, 1, 29));
 
+var msg = "レッツプレイ！プリキュア・モジュレーション！\n爪弾くは荒ぶる調べ！キュアメロディ！\n爪弾くはたおやかな調べ！キュアリズム！";
+
 var hibiki = new precure.Girl([
     "北条響",
     "キュアメロディ"
 ], [
     null,
-    "レッツプレイ！プリキュア・モジュレーション！\n爪弾くは荒ぶる調べ！キュアメロディ！"
+    msg
 ], "南野奏");
 
 var kanade = new precure.Girl([
@@ -21,7 +23,7 @@ var kanade = new precure.Girl([
     "キュアリズム"
 ], [
     null,
-    "レッツプレイ！プリキュア・モジュレーション！\n爪弾くはたおやかな調べ！キュアリズム！"
+    msg
 ], "北条響");
 
 var ellen = new precure.Girl([

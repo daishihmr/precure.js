@@ -11,12 +11,12 @@ var precure = {};
  * @class
  * @constructor
  * @property {String} title 作品タイトル
- * @property {Date} statedDate 放送開始日時
+ * @property {Date} startedDate 放送開始日時
  * @property {Date} endedDate 放送終了日時
  */
-precure.Series = function(title, statedDate, endedDate) {
+precure.Series = function(title, startedDate, endedDate) {
     this.title = title;
-    this.statedDate = statedDate;
+    this.startedDate = startedDate;
     this.endedDate = endedDate;
     this.girls = [];
 };
@@ -479,12 +479,14 @@ precure.heartcatch.girls[3] = yuri;
  */
 precure.suite = new precure.Series("スイートプリキュア♪", new Date(2011, 2, 6), new Date(2012, 1, 29));
 
+var msg = "レッツプレイ！プリキュア・モジュレーション！\n爪弾くは荒ぶる調べ！キュアメロディ！\n爪弾くはたおやかな調べ！キュアリズム！";
+
 var hibiki = new precure.Girl([
     "北条響",
     "キュアメロディ"
 ], [
     null,
-    "レッツプレイ！プリキュア・モジュレーション！\n爪弾くは荒ぶる調べ！キュアメロディ！"
+    msg
 ], "南野奏");
 
 var kanade = new precure.Girl([
@@ -492,7 +494,7 @@ var kanade = new precure.Girl([
     "キュアリズム"
 ], [
     null,
-    "レッツプレイ！プリキュア・モジュレーション！\n爪弾くはたおやかな調べ！キュアリズム！"
+    msg
 ], "北条響");
 
 var ellen = new precure.Girl([
