@@ -1,4 +1,9 @@
 describe("test maxheart", function() {
+    beforeEach(function() {
+        precure.maxheart.girls.forEach(function(girl) {
+            girl.humanize();
+        });
+    });
 
     it("MHの1人目", function() {
         var girl = precure.maxheart.girls[0];
@@ -9,15 +14,7 @@ describe("test maxheart", function() {
         expect(girl.state).toEqual(0);
         expect(girl.name).toEqual("美墨なぎさ");
 
-        try {
-            girl.transform();
-        } catch (e) {
-            expect(e instanceof precure.PartnerInvalidError).toBe(true);
-        }
-
-        expect(girl.state).toEqual(0);
-
-        girl.transform("雪城ほのか");
+        girl.transform(precure.maxheart.girls[1]);
 
         expect(girl.state).toEqual(1);
         expect(girl.name).toEqual("キュアブラック");
@@ -32,15 +29,7 @@ describe("test maxheart", function() {
         expect(girl.state).toEqual(0);
         expect(girl.name).toEqual("雪城ほのか");
 
-        try {
-            girl.transform();
-        } catch (e) {
-            expect(e instanceof precure.PartnerInvalidError).toBe(true);
-        }
-
-        expect(girl.state).toEqual(0);
-
-        girl.transform("美墨なぎさ");
+        girl.transform(precure.maxheart.girls[0]);
 
         expect(girl.state).toEqual(1);
         expect(girl.name).toEqual("キュアホワイト");

@@ -1,4 +1,9 @@
 describe("test suite", function() {
+    beforeEach(function() {
+        precure.suite.girls.forEach(function(girl) {
+            girl.humanize();
+        });
+    });
 
     it("スイートの1人目", function() {
         var girl = precure.suite.girls[0];
@@ -9,16 +14,20 @@ describe("test suite", function() {
         expect(girl.state).toEqual(0);
         expect(girl.name).toEqual("北条響");
 
+        var error = null;
         try {
             girl.transform();
         } catch (e) {
-            expect(e instanceof precure.PartnerInvalidError).toBe(true);
+            error = e;
         }
+        expect(error).toNotBe(null);
 
-        girl.transform("南野奏");
+        girl.transform(precure.suite.girls[1]);
 
         expect(girl.state).toEqual(1);
         expect(girl.name).toEqual("キュアメロディ");
+        expect(precure.suite.girls[1].state).toEqual(1);
+        expect(precure.suite.girls[1].name).toEqual("キュアリズム");
     });
 
     it("スイートの2人目", function() {
@@ -30,16 +39,20 @@ describe("test suite", function() {
         expect(girl.state).toEqual(0);
         expect(girl.name).toEqual("南野奏");
 
+        var error = null;
         try {
             girl.transform();
         } catch (e) {
-            expect(e instanceof precure.PartnerInvalidError).toBe(true);
+            error = e;
         }
+        expect(error).toNotBe(null);
 
-        girl.transform("北条響");
+        girl.transform(precure.suite.girls[0]);
 
         expect(girl.state).toEqual(1);
         expect(girl.name).toEqual("キュアリズム");
+        expect(precure.suite.girls[0].state).toEqual(1);
+        expect(precure.suite.girls[0].name).toEqual("キュアメロディ");
     });
 
     it("スイートの3人目", function() {

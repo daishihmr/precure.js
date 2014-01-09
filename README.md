@@ -42,11 +42,17 @@ Mon Mar 05 2012 00:00:00 GMT+0900 (東京 (標準時))
 > p.girls[0].transform()
 Error: partner is invalid.
 
-> p.girls[0].transform("南野奏");
+> p.girls[1].name
+'南野奏'
+
+> p.girls[0].transform(p.girls[1]);
 'レッツプレイ！プリキュア・モジュレーション！\n爪弾くはあらぶる調べ！キュアメロディ！\n爪弾くはたおやかな調べ！キュアリズム！'
 
 > p.girls[0].name
 'キュアメロディ'
+
+> p.girls[1].name
+'キュアリズム'
 
 > precure.allStars.length
 38
