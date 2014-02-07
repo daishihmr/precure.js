@@ -6,7 +6,8 @@
  * @constant
  * @type precure.Series
  */
-precure.fivegogo = new precure.Series("Yes! プリキュア5GoGo!", new Date(2008, 2, 3), new Date(2009, 1, 25));
+precure.fivegogo = new precure.Series("Yes! プリキュア5GoGo!", new Date("2008-03-02T15:00:00.000Z"), new Date("2009-02-24T15:00:00.000Z"));
+precure.series.push(precure.fivegogo);
 
 var nozomi = new precure.Girl([
     "夢原のぞみ",
@@ -62,5 +63,24 @@ precure.fivegogo.girls[2] = urara;
 precure.fivegogo.girls[3] = komachi;
 precure.fivegogo.girls[4] = karen;
 precure.fivegogo.girls[5] = kurumi;
+
+nozomi.setExtraData({
+    "cv": "三瓶由布子"
+});
+rin.setExtraData({
+    "cv": "竹内順子"
+});
+urara.setExtraData({
+    "cv": "伊瀬茉莉也"
+});
+komachi.setExtraData({
+    "cv": "永野愛"
+});
+karen.setExtraData({
+    "cv": "前田愛"
+});
+kurumi.setExtraData({
+    "cv": "仙台エリ"
+});
 
 })();

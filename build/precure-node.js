@@ -6,11 +6,17 @@ var precure = {};
 (function() {
 
 /**
+ * 全TVシリーズの配列
+ * @type {Array.<precure.Series>}
+ */
+precure.series = [];
+
+/**
  * 作品クラス
  *
  * @class
  * @constructor
- * @property {String} title 作品タイトル
+ * @property {string} title 作品タイトル
  * @property {Date} startedDate 放送開始日時
  * @property {Date} endedDate 放送終了日時
  */
@@ -26,9 +32,9 @@ precure.Series = function(title, startedDate, endedDate) {
  *
  * @static
  * @memberOf precure.Series
- * @type {Array.<String>}
+ * @type {Array.<string>}
  */
-precure.Series.NAMES = [
+precure.Series.TITLES = [
     "unmarked",
     "maxheart",
     "splashstar",
@@ -47,9 +53,9 @@ precure.Series.NAMES = [
  *
  * @static
  * @memberOf precure.Series
- * @type {Array.<String>}
+ * @type {Array.<string>}
  */
-precure.Series.NAMES = [
+precure.Series.ALL_STARS_TITLES = [
     "dx1",
     "dx2",
     "dx3",
@@ -63,10 +69,10 @@ precure.Series.NAMES = [
  *
  * @class
  * @constructor
- * @property {String[]} names 名前のリスト。stateと項番が一致する名前の配列。
- * @property {String[]} transformMessages 変身時メッセージのリストstateと項番が一致する形態への変身時に使用するメッセージの配列
- * @property {String} partner パートナーの名前
- * @property {Number} state 状態。初期値を0とし、以後変身の度に1ずつ増加する
+ * @property {string[]} names 名前のリスト。stateと項番が一致する名前の配列。
+ * @property {string[]} transformMessages 変身時メッセージのリストstateと項番が一致する形態への変身時に使用するメッセージの配列
+ * @property {string} partner パートナーの名前
+ * @property {number} state 状態。初期値を0とし、以後変身の度に1ずつ増加する
  */
 precure.Girl = function(names, transformMessages, partner) {
     this.names = names;
@@ -76,8 +82,20 @@ precure.Girl = function(names, transformMessages, partner) {
     this.humanName = names[0];
     this.precureName = names[1];
 
+    this.cv = null;
+
     this.state = 0;
     this._updateState();
+};
+
+/**
+ * プリキュアに拡張データを設定します。
+ * @param {Object.<string, *>}
+ */
+precure.Girl.prototype.setExtraData = function(data) {
+    for (var key in data) if (data.hasOwnProperty(key)) {
+        this[key] = data[key];
+    }
 };
 
 /**
@@ -86,11 +104,11 @@ precure.Girl = function(names, transformMessages, partner) {
  * 
  * @methodOf precure.Girl
  * @param {precure.Girl} [partner] パートナー(オプション)
- * @returns {String}
+ * @returns {string}
  * @throws {precure.PartnerInvalidError} 変身にパートナーを要する場合、正しい引数を与えずに実行すると例外を投げます。
  */
 precure.Girl.prototype.transform = function(partner) {
-    if (this.partner !== undefined && this.partner !== partner.humanName) {
+    if (this.partner !== undefined && (partner === undefined || this.partner !== partner.humanName)) {
         throw new precure.PartnerInvalidError();
     }
 
@@ -102,6 +120,10 @@ precure.Girl.prototype.transform = function(partner) {
     }
 
     return this.transformMessages[this.state] || null;
+};
+
+precure.Girl.prototype.toString = function() {
+    return this.name;
 };
 
 /**
@@ -144,7 +166,8 @@ precure.PartnerInvalidError.prototype = new Error("partner is invalid.");
  * @constant
  * @type precure.Series
  */
-precure.unmarked = new precure.Series("ふたりはプリキュア", new Date(2004, 2, 1), new Date(2005, 1, 30));
+precure.unmarked = new precure.Series("ふたりはプリキュア", new Date("2004-02-29T15:00:00.000Z"), new Date("2005-03-01T15:00:00.000Z"));
+precure.series.push(precure.unmarked);
 
 var msg = "デュアル・オーロラ・ウェイブ！\n光の使者キュアブラック！\n光の使者キュアホワイト！\nふたりはプリキュア！";
 
@@ -167,6 +190,15 @@ var white = new precure.Girl([
 precure.unmarked.girls[0] = black;
 precure.unmarked.girls[1] = white;
 
+black.setExtraData({
+    "cv": "本名陽子",
+    "birthday": new Date("1990-11-09T15:00:00.000Z")
+});
+white.setExtraData({
+    "cv": "ゆかな",
+    "birthday": new Date("1990-05-03T15:00:00.000Z")
+});
+
 })();
 
 (function() {
@@ -177,7 +209,8 @@ precure.unmarked.girls[1] = white;
  * @constant
  * @type precure.Series
  */
-precure.maxheart = new precure.Series("ふたりはプリキュア Max Heart", new Date(2005, 2, 6), new Date(2006, 1, 29));
+precure.maxheart = new precure.Series("ふたりはプリキュア Max Heart", new Date("2005-03-05T15:00:00.000Z"), new Date("2006-02-28T15:00:00.000Z"));
+precure.series.push(precure.maxheart);
 
 var msg = "デュアル・オーロラ・ウェイブ！\n光の使者キュアブラック！\n光の使者キュアホワイト！\nふたりはプリキュア！"
 
@@ -209,6 +242,19 @@ precure.maxheart.girls[0] = black;
 precure.maxheart.girls[1] = white;
 precure.maxheart.girls[2] = luminus;
 
+black.setExtraData({
+    "cv": "本名陽子",
+    "birthday": new Date("1990-11-09T15:00:00.000Z")
+});
+white.setExtraData({
+    "cv": "ゆかな",
+    "birthday": new Date("1990-05-03T15:00:00.000Z")
+});
+luminus.setExtraData({
+    "cv": "田中理恵",
+    "birthday": new Date("1992-10-08T15:00:00.000Z")
+});
+
 })();
 
 (function() {
@@ -219,7 +265,8 @@ precure.maxheart.girls[2] = luminus;
  * @constant
  * @type precure.Series
  */
-precure.splashstar = new precure.Series("ふたりはプリキュア Splash Star", new Date(2006, 2, 5), new Date(2007, 1, 28));
+precure.splashstar = new precure.Series("ふたりはプリキュア Splash Star", new Date("2006-03-04T15:00:00.000Z"), new Date("2007-02-27T15:00:00.000Z"));
+precure.series.push(precure.splashstar);
 
 var common = "聖なる泉を汚す者よ！\nアコギな真似はおやめなさい！";
 var msg1 = "デュアル・スピリチュアル・パワー！\n花開け、大地に！\n羽ばたけ、空に！\n輝く金の花！キュアブルーム！\n煌く銀の翼！キュアイーグレット！\nふたりはプリキュア！";
@@ -248,6 +295,15 @@ var mai = new precure.Girl([
 precure.splashstar.girls[0] = saki;
 precure.splashstar.girls[1] = mai;
 
+saki.setExtraData({
+    "cv": "樹元オリエ",
+    "birthday": new Date("1992-09-06T15:00:00.000Z")
+});
+mai.setExtraData({
+    "cv": "榎本温子",
+    "birthday": new Date("1992-12-19T15:00:00.000Z")
+});
+
 })();
 
 (function() {
@@ -258,7 +314,8 @@ precure.splashstar.girls[1] = mai;
  * @constant
  * @type precure.Series
  */
-precure.five = new precure.Series("Yes! プリキュア5", new Date(2007, 2, 4), new Date(2008, 1, 27));
+precure.five = new precure.Series("Yes! プリキュア5", new Date("2007-03-03T15:00:00.000Z"), new Date("2008-02-26T15:00:00.000Z"));
+precure.series.push(precure.five);
 
 var nozomi = new precure.Girl([
     "夢原のぞみ",
@@ -306,6 +363,22 @@ precure.five.girls[2] = urara;
 precure.five.girls[3] = komachi;
 precure.five.girls[4] = karen;
 
+nozomi.setExtraData({
+    "cv": "三瓶由布子"
+});
+rin.setExtraData({
+    "cv": "竹内順子"
+});
+urara.setExtraData({
+    "cv": "伊瀬茉莉也"
+});
+komachi.setExtraData({
+    "cv": "永野愛"
+});
+karen.setExtraData({
+    "cv": "前田愛"
+});
+
 })();
 
 (function() {
@@ -316,7 +389,8 @@ precure.five.girls[4] = karen;
  * @constant
  * @type precure.Series
  */
-precure.fivegogo = new precure.Series("Yes! プリキュア5GoGo!", new Date(2008, 2, 3), new Date(2009, 1, 25));
+precure.fivegogo = new precure.Series("Yes! プリキュア5GoGo!", new Date("2008-03-02T15:00:00.000Z"), new Date("2009-02-24T15:00:00.000Z"));
+precure.series.push(precure.fivegogo);
 
 var nozomi = new precure.Girl([
     "夢原のぞみ",
@@ -373,6 +447,25 @@ precure.fivegogo.girls[3] = komachi;
 precure.fivegogo.girls[4] = karen;
 precure.fivegogo.girls[5] = kurumi;
 
+nozomi.setExtraData({
+    "cv": "三瓶由布子"
+});
+rin.setExtraData({
+    "cv": "竹内順子"
+});
+urara.setExtraData({
+    "cv": "伊瀬茉莉也"
+});
+komachi.setExtraData({
+    "cv": "永野愛"
+});
+karen.setExtraData({
+    "cv": "前田愛"
+});
+kurumi.setExtraData({
+    "cv": "仙台エリ"
+});
+
 })();
 
 (function() {
@@ -383,7 +476,8 @@ precure.fivegogo.girls[5] = kurumi;
  * @constant
  * @type precure.Series
  */
-precure.fresh = new precure.Series("フレッシュプリキュア!", new Date(2009, 2, 1), new Date(2010, 1, 31));
+precure.fresh = new precure.Series("フレッシュプリキュア!", new Date("2009-02-28T15:00:00.000Z"), new Date("2010-03-02T15:00:00.000Z"));
+precure.series.push(precure.fresh);
 
 var love = new precure.Girl([
     "桃園ラブ",
@@ -422,6 +516,19 @@ precure.fresh.girls[1] = mktn;
 precure.fresh.girls[2] = bukky;
 precure.fresh.girls[3] = setsuna;
 
+love.setExtraData({
+    "cv": "沖佳苗"
+});
+mktn.setExtraData({
+    "cv": "喜多村英梨"
+});
+bukky.setExtraData({
+    "cv": "中川亜紀子"
+});
+setsuna.setExtraData({
+    "cv": "小松由佳"
+});
+
 })();
 
 (function() {
@@ -432,7 +539,8 @@ precure.fresh.girls[3] = setsuna;
  * @constant
  * @type precure.Series
  */
-precure.heartcatch = new precure.Series("ハートキャッチプリキュア!", new Date(2010, 2, 7), new Date(2011, 1, 30));
+precure.heartcatch = new precure.Series("ハートキャッチプリキュア!", new Date("2010-03-06T15:00:00.000Z"), new Date("2011-03-01T15:00:00.000Z"));
+precure.series.push(precure.heartcatch);
 
 var tsubomi = new precure.Girl([
     "花咲つぼみ",
@@ -471,6 +579,19 @@ precure.heartcatch.girls[1] = erika;
 precure.heartcatch.girls[2] = itsuki;
 precure.heartcatch.girls[3] = yuri;
 
+tsubomi.setExtraData({
+    "cv": "水樹奈々"
+});
+erika.setExtraData({
+    "cv": "水沢史絵"
+});
+itsuki.setExtraData({
+    "cv": "桑島法子"
+});
+yuri.setExtraData({
+    "cv": "久川綾"
+});
+
 })();
 
 (function() {
@@ -481,7 +602,8 @@ precure.heartcatch.girls[3] = yuri;
  * @constant
  * @type precure.Series
  */
-precure.suite = new precure.Series("スイートプリキュア♪", new Date(2011, 2, 6), new Date(2012, 1, 29));
+precure.suite = new precure.Series("スイートプリキュア♪", new Date("2011-03-05T15:00:00.000Z"), new Date("2012-02-28T15:00:00.000Z"));
+precure.series.push(precure.suite);
 
 var msg = "レッツプレイ！プリキュア・モジュレーション！\n爪弾くは荒ぶる調べ！キュアメロディ！\n爪弾くはたおやかな調べ！キュアリズム！";
 
@@ -522,6 +644,19 @@ precure.suite.girls[1] = kanade;
 precure.suite.girls[2] = ellen;
 precure.suite.girls[3] = ako;
 
+hibiki.setExtraData({
+    "cv": "小清水亜美"
+});
+kanade.setExtraData({
+    "cv": "折笠富美子"
+});
+ellen.setExtraData({
+    "cv": "豊口めぐみ"
+});
+ako.setExtraData({
+    "cv": "大久保瑠美"
+});
+
 })();
 
 (function() {
@@ -532,7 +667,8 @@ precure.suite.girls[3] = ako;
  * @constant
  * @type precure.Series
  */
-precure.smile = new precure.Series("スマイルプリキュア!", new Date(2012, 2, 5), new Date(2013, 1, 27));
+precure.smile = new precure.Series("スマイルプリキュア!", new Date("2012-03-04T15:00:00.000Z"), new Date("2013-02-26T15:00:00.000Z"));
+precure.series.push(precure.smile);
 
 var miyuki = new precure.Girl([
     "星空みゆき",
@@ -580,6 +716,22 @@ precure.smile.girls[2] = yayoi;
 precure.smile.girls[3] = nao;
 precure.smile.girls[4] = reika;
 
+miyuki.setExtraData({
+    "cv": "福圓美里"
+});
+akane.setExtraData({
+    "cv": "田野アサミ"
+});
+yayoi.setExtraData({
+    "cv": "金元寿子"
+});
+nao.setExtraData({
+    "cv": "井上麻里奈"
+});
+reika.setExtraData({
+    "cv": "西村ちなみ"
+});
+
 })();
 
 (function() {
@@ -590,7 +742,8 @@ precure.smile.girls[4] = reika;
  * @constant
  * @type precure.Series
  */
-precure.dokidoki = new precure.Series("ドキドキ!プリキュア", new Date(2013, 2, 3), new Date(2014, 1, 26));
+precure.dokidoki = new precure.Series("ドキドキ!プリキュア", new Date("2013-03-02T15:00:00.000Z"), new Date("2014-02-25T15:00:00.000Z"));
+precure.series.push(precure.dokidoki);
 
 var mana = new precure.Girl([
     "相田マナ",
@@ -638,6 +791,22 @@ precure.dokidoki.girls[2] = alice;
 precure.dokidoki.girls[3] = makoto;
 precure.dokidoki.girls[4] = aguri;
 
+mana.setExtraData({
+    "cv": "生天目仁美"
+});
+rikka.setExtraData({
+    "cv": "寿美菜子"
+});
+alice.setExtraData({
+    "cv": "渕上舞"
+});
+makoto.setExtraData({
+    "cv": "宮本佳那子"
+});
+aguri.setExtraData({
+    "cv": "釘宮理恵"
+});
+
 })();
 
 (function() {
@@ -648,7 +817,8 @@ precure.dokidoki.girls[4] = aguri;
  * @constant
  * @type precure.Series
  */
-precure.happinesscharge = new precure.Series("ハピネスチャージプリキュア!", new Date(2014, 2, 2), new Date(2015, 1, 25));
+precure.happinesscharge = new precure.Series("ハピネスチャージプリキュア!", new Date("2014-03-01T15:00:00.000Z"), new Date("2015-02-24T15:00:00.000Z"));
+precure.series.push(precure.happinesscharge);
 
 var megumi = new precure.Girl([
     "愛乃めぐみ",
@@ -668,7 +838,7 @@ var hime = new precure.Girl([
 
 var girl3 = new precure.Girl([
     "",
-    "キュアフォーチュン"
+    "キュアハニー"
 ], [
     null,
     ""
@@ -676,7 +846,7 @@ var girl3 = new precure.Girl([
 
 var girl4 = new precure.Girl([
     "",
-    "キュアハニー"
+    "キュアフォーチュン"
 ], [
     null,
     ""
@@ -686,6 +856,19 @@ precure.happinesscharge.girls[0] = megumi;
 precure.happinesscharge.girls[1] = hime;
 precure.happinesscharge.girls[2] = girl3;
 precure.happinesscharge.girls[3] = girl4;
+
+megumi.setExtraData({
+    "cv": "中島愛"
+});
+hime.setExtraData({
+    "cv": "潘めぐみ",
+    "realName": "ヒメルダ・ウインドウ・キュアクイーン・オブ・ザ・ブルースカイ"
+});
+girl3.setExtraData({
+});
+girl4.setExtraData({
+    "cv": "戸松遥"
+});
 
 })();
 

@@ -6,7 +6,8 @@
  * @constant
  * @type precure.Series
  */
-precure.suite = new precure.Series("スイートプリキュア♪", new Date(2011, 2, 6), new Date(2012, 1, 29));
+precure.suite = new precure.Series("スイートプリキュア♪", new Date("2011-03-05T15:00:00.000Z"), new Date("2012-02-28T15:00:00.000Z"));
+precure.series.push(precure.suite);
 
 var msg = "レッツプレイ！プリキュア・モジュレーション！\n爪弾くは荒ぶる調べ！キュアメロディ！\n爪弾くはたおやかな調べ！キュアリズム！";
 
@@ -46,5 +47,18 @@ precure.suite.girls[0] = hibiki;
 precure.suite.girls[1] = kanade;
 precure.suite.girls[2] = ellen;
 precure.suite.girls[3] = ako;
+
+hibiki.setExtraData({
+    "cv": "小清水亜美"
+});
+kanade.setExtraData({
+    "cv": "折笠富美子"
+});
+ellen.setExtraData({
+    "cv": "豊口めぐみ"
+});
+ako.setExtraData({
+    "cv": "大久保瑠美"
+});
 
 })();

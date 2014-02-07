@@ -6,7 +6,8 @@
  * @constant
  * @type precure.Series
  */
-precure.dokidoki = new precure.Series("ドキドキ!プリキュア", new Date(2013, 2, 3), new Date(2014, 1, 26));
+precure.dokidoki = new precure.Series("ドキドキ!プリキュア", new Date("2013-03-02T15:00:00.000Z"), new Date("2014-02-25T15:00:00.000Z"));
+precure.series.push(precure.dokidoki);
 
 var mana = new precure.Girl([
     "相田マナ",
@@ -53,5 +54,21 @@ precure.dokidoki.girls[1] = rikka;
 precure.dokidoki.girls[2] = alice;
 precure.dokidoki.girls[3] = makoto;
 precure.dokidoki.girls[4] = aguri;
+
+mana.setExtraData({
+    "cv": "生天目仁美"
+});
+rikka.setExtraData({
+    "cv": "寿美菜子"
+});
+alice.setExtraData({
+    "cv": "渕上舞"
+});
+makoto.setExtraData({
+    "cv": "宮本佳那子"
+});
+aguri.setExtraData({
+    "cv": "釘宮理恵"
+});
 
 })();
