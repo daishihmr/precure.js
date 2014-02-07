@@ -46,6 +46,10 @@ var ayumi = new precure.Girl([
 ]);
 precure.ns1.girls[0] = ayumi;
 
+ayumi.setExtraData({
+    "cv": "能登麻美子"
+});
+
 /**
  * 映画 プリキュアオールスターズNewStage2 こころのともだち
  *

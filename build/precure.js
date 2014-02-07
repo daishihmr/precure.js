@@ -750,7 +750,7 @@ var mana = new precure.Girl([
     "キュアハート"
 ], [
     null,
-    "みなぎる愛！キュアハート！"
+    "プリキュア・ラブリンク！\nみなぎる愛！キュアハート！"
 ]);
 
 var rikka = new precure.Girl([
@@ -758,7 +758,7 @@ var rikka = new precure.Girl([
     "キュアダイヤモンド"
 ], [
     null,
-    "英知の光！キュアダイヤモンド！"
+    "プリキュア・ラブリンク！\n英知の光！キュアダイヤモンド！"
 ]);
 
 var alice = new precure.Girl([
@@ -766,7 +766,7 @@ var alice = new precure.Girl([
     "キュアロゼッタ"
 ], [
     null,
-    "ひだまりポカポカ！キュアロゼッタ！"
+    "プリキュア・ラブリンク！\nひだまりポカポカ！キュアロゼッタ！"
 ]);
 
 var makoto = new precure.Girl([
@@ -774,7 +774,7 @@ var makoto = new precure.Girl([
     "キュアソード"
 ], [
     null,
-    "勇気の刃！キュアソード！"
+    "プリキュア・ラブリンク！\n勇気の刃！キュアソード！"
 ]);
 
 var aguri = new precure.Girl([
@@ -782,7 +782,7 @@ var aguri = new precure.Girl([
     "キュアエース"
 ], [
     null,
-    "愛の切り札！キュアエース！"
+    "プリキュア・ドレスアップ！\n愛の切り札！キュアエース！"
 ]);
 
 precure.dokidoki.girls[0] = mana;
@@ -825,7 +825,7 @@ var megumi = new precure.Girl([
     "キュアラブリー"
 ], [
     null,
-    ""
+    "プリキュア、くるりんミラーチェンジ！\n世界に広がるビッグな愛！キュアラブリー！"
 ]);
 
 var hime = new precure.Girl([
@@ -833,7 +833,7 @@ var hime = new precure.Girl([
     "キュアプリンセス"
 ], [
     null,
-    ""
+    "プリキュア、くるりんミラーチェンジ！\n天空に舞う蒼き風！キュアプリンセス！"
 ]);
 
 var girl3 = new precure.Girl([
@@ -919,6 +919,10 @@ var ayumi = new precure.Girl([
     "想いよ届け！キュアエコー！"
 ]);
 precure.ns1.girls[0] = ayumi;
+
+ayumi.setExtraData({
+    "cv": "能登麻美子"
+});
 
 /**
  * 映画 プリキュアオールスターズNewStage2 こころのともだち

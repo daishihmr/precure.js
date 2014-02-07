@@ -14,7 +14,7 @@ var mana = new precure.Girl([
     "キュアハート"
 ], [
     null,
-    "みなぎる愛！キュアハート！"
+    "プリキュア・ラブリンク！\nみなぎる愛！キュアハート！"
 ]);
 
 var rikka = new precure.Girl([
@@ -22,7 +22,7 @@ var rikka = new precure.Girl([
     "キュアダイヤモンド"
 ], [
     null,
-    "英知の光！キュアダイヤモンド！"
+    "プリキュア・ラブリンク！\n英知の光！キュアダイヤモンド！"
 ]);
 
 var alice = new precure.Girl([
@@ -30,7 +30,7 @@ var alice = new precure.Girl([
     "キュアロゼッタ"
 ], [
     null,
-    "ひだまりポカポカ！キュアロゼッタ！"
+    "プリキュア・ラブリンク！\nひだまりポカポカ！キュアロゼッタ！"
 ]);
 
 var makoto = new precure.Girl([
@@ -38,7 +38,7 @@ var makoto = new precure.Girl([
     "キュアソード"
 ], [
     null,
-    "勇気の刃！キュアソード！"
+    "プリキュア・ラブリンク！\n勇気の刃！キュアソード！"
 ]);
 
 var aguri = new precure.Girl([
@@ -46,7 +46,7 @@ var aguri = new precure.Girl([
     "キュアエース"
 ], [
     null,
-    "愛の切り札！キュアエース！"
+    "プリキュア・ドレスアップ！\n愛の切り札！キュアエース！"
 ]);
 
 precure.dokidoki.girls[0] = mana;

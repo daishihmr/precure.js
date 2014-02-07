@@ -14,7 +14,7 @@ var megumi = new precure.Girl([
     "キュアラブリー"
 ], [
     null,
-    ""
+    "プリキュア、くるりんミラーチェンジ！\n世界に広がるビッグな愛！キュアラブリー！"
 ]);
 
 var hime = new precure.Girl([
@@ -22,7 +22,7 @@ var hime = new precure.Girl([
     "キュアプリンセス"
 ], [
     null,
-    ""
+    "プリキュア、くるりんミラーチェンジ！\n天空に舞う蒼き風！キュアプリンセス！"
 ]);
 
 var girl3 = new precure.Girl([
