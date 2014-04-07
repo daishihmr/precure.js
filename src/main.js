@@ -78,6 +78,14 @@ precure.Girl = function(names, transformMessages, partner) {
 
     this.state = 0;
     this._updateState();
+
+    this.info = {};
+};
+
+precure.Girl.prototype.addInfo = function(info) {
+    for (var key in info) if (info.hasOwnProperty(key)) {
+        this.info[key] = info[key];
+    }
 };
 
 /**
