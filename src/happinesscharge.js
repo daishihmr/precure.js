@@ -13,7 +13,7 @@ var megumi = new precure.Girl([
     "キュアラブリー"
 ], [
     null,
-    ""
+    "プリキュア・くるりんミラーチェンジ！\n世界に広がるビッグな愛！キュアラブリー！"
 ]);
 
 var hime = new precure.Girl([
@@ -21,20 +21,20 @@ var hime = new precure.Girl([
     "キュアプリンセス"
 ], [
     null,
-    ""
+    "プリキュア・くるりんミラーチェンジ！\n天空に舞う蒼き風！キュアプリンセス！"
 ]);
 
-var girl3 = new precure.Girl([
-    "",
-    "キュアフォーチュン"
+var yuuko = new precure.Girl([
+    "大森ゆうこ",
+    "キュアハニー"
 ], [
     null,
     ""
 ]);
 
-var girl4 = new precure.Girl([
-    "",
-    "キュアハニー"
+var iona = new precure.Girl([
+    "氷川いおな",
+    "キュアフォーチュン"
 ], [
     null,
     ""
@@ -42,7 +42,7 @@ var girl4 = new precure.Girl([
 
 precure.happinesscharge.girls[0] = megumi;
 precure.happinesscharge.girls[1] = hime;
-precure.happinesscharge.girls[2] = girl3;
-precure.happinesscharge.girls[3] = girl4;
+precure.happinesscharge.girls[2] = yuuko;
+precure.happinesscharge.girls[3] = iona;
 
 })();
