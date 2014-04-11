@@ -1,1 +1,1 @@
-exports.precure = precure;
+module.exports = precure;

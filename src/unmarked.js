@@ -18,6 +18,11 @@ var black = new precure.Girl([
     null,
     msg
 ], "雪城ほのか");
+black.addInfo({
+    specialAttacks: [
+        
+    ]
+});
 
 var white = new precure.Girl([
     "雪城ほのか",

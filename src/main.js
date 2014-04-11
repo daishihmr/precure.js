@@ -164,4 +164,11 @@ precure.Girl.prototype._updateState = function() {
 precure.PartnerInvalidError = function() {};
 precure.PartnerInvalidError.prototype = new Error("partner is invalid.");
 
+/**
+ * 技クラス。
+ */
+precure.Skill = function(name, girls) {
+    this.name = name;
+};
+
 })();
