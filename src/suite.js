@@ -6,7 +6,7 @@
  * @constant
  * @type precure.Series
  */
-precure.suite = new precure.Series("スイートプリキュア♪", new Date(2011, 2, 6), new Date(2012, 1, 29));
+precure.suite = new precure.Series("スイートプリキュア♪", new Date("Sun Feb 06 2011 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 29 2012 08:30:00 GMT+0900 (JST)"));
 
 var msg = "レッツプレイ！プリキュア・モジュレーション！\n爪弾くは荒ぶる調べ！キュアメロディ！\n爪弾くはたおやかな調べ！キュアリズム！";
 

@@ -144,7 +144,7 @@ precure.PartnerInvalidError.prototype = new Error("partner is invalid.");
  * @constant
  * @type precure.Series
  */
-precure.unmarked = new precure.Series("ふたりはプリキュア", new Date(2004, 2, 1), new Date(2005, 1, 30));
+precure.unmarked = new precure.Series("ふたりはプリキュア", new Date("Sun Feb 01 2004 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 30 2005 08:30:00 GMT+0900 (JST)"));
 
 var msg = "デュアル・オーロラ・ウェイブ！\n光の使者キュアブラック！\n光の使者キュアホワイト！\nふたりはプリキュア！";
 
@@ -177,7 +177,7 @@ precure.unmarked.girls[1] = white;
  * @constant
  * @type precure.Series
  */
-precure.maxheart = new precure.Series("ふたりはプリキュア Max Heart", new Date(2005, 2, 6), new Date(2006, 1, 29));
+precure.maxheart = new precure.Series("ふたりはプリキュア Max Heart", new Date("Sun Feb 06 2005 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 29 2006 08:30:00 GMT+0900 (JST)"));
 
 var msg = "デュアル・オーロラ・ウェイブ！\n光の使者キュアブラック！\n光の使者キュアホワイト！\nふたりはプリキュア！"
 
@@ -219,7 +219,7 @@ precure.maxheart.girls[2] = luminus;
  * @constant
  * @type precure.Series
  */
-precure.splashstar = new precure.Series("ふたりはプリキュア Splash Star", new Date(2006, 2, 5), new Date(2007, 1, 28));
+precure.splashstar = new precure.Series("ふたりはプリキュア Splash Star", new Date("Sun Feb 05 2006 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 28 2007 08:30:00 GMT+0900 (JST)"));
 
 var common = "聖なる泉を汚す者よ！\nアコギな真似はおやめなさい！";
 var msg1 = "デュアル・スピリチュアル・パワー！\n花開け、大地に！\n羽ばたけ、空に！\n輝く金の花！キュアブルーム！\n煌く銀の翼！キュアイーグレット！\nふたりはプリキュア！";
@@ -258,7 +258,7 @@ precure.splashstar.girls[1] = mai;
  * @constant
  * @type precure.Series
  */
-precure.five = new precure.Series("Yes! プリキュア5", new Date(2007, 2, 4), new Date(2008, 1, 27));
+precure.five = new precure.Series("Yes! プリキュア5", new Date("Sun Feb 04 2007 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 27 2008 08:30:00 GMT+0900 (JST)"));
 
 var nozomi = new precure.Girl([
     "夢原のぞみ",
@@ -316,7 +316,7 @@ precure.five.girls[4] = karen;
  * @constant
  * @type precure.Series
  */
-precure.fivegogo = new precure.Series("Yes! プリキュア5GoGo!", new Date(2008, 2, 3), new Date(2009, 1, 25));
+precure.fivegogo = new precure.Series("Yes! プリキュア5GoGo!", new Date("Sun Feb 03 2008 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 25 2009 08:30:00 GMT+0900 (JST)"));
 
 var nozomi = new precure.Girl([
     "夢原のぞみ",
@@ -383,7 +383,7 @@ precure.fivegogo.girls[5] = kurumi;
  * @constant
  * @type precure.Series
  */
-precure.fresh = new precure.Series("フレッシュプリキュア!", new Date(2009, 2, 1), new Date(2010, 1, 31));
+precure.fresh = new precure.Series("フレッシュプリキュア!", new Date("Sun Feb 01 2009 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 31 2010 08:30:00 GMT+0900 (JST)"));
 
 var love = new precure.Girl([
     "桃園ラブ",
@@ -432,7 +432,7 @@ precure.fresh.girls[3] = setsuna;
  * @constant
  * @type precure.Series
  */
-precure.heartcatch = new precure.Series("ハートキャッチプリキュア!", new Date(2010, 2, 7), new Date(2011, 1, 30));
+precure.heartcatch = new precure.Series("ハートキャッチプリキュア!", new Date("Sun Feb 07 2010 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 30 2011 08:30:00 GMT+0900 (JST)"));
 
 var tsubomi = new precure.Girl([
     "花咲つぼみ",
@@ -481,7 +481,7 @@ precure.heartcatch.girls[3] = yuri;
  * @constant
  * @type precure.Series
  */
-precure.suite = new precure.Series("スイートプリキュア♪", new Date(2011, 2, 6), new Date(2012, 1, 29));
+precure.suite = new precure.Series("スイートプリキュア♪", new Date("Sun Feb 06 2011 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 29 2012 08:30:00 GMT+0900 (JST)"));
 
 var msg = "レッツプレイ！プリキュア・モジュレーション！\n爪弾くは荒ぶる調べ！キュアメロディ！\n爪弾くはたおやかな調べ！キュアリズム！";
 
@@ -532,7 +532,7 @@ precure.suite.girls[3] = ako;
  * @constant
  * @type precure.Series
  */
-precure.smile = new precure.Series("スマイルプリキュア!", new Date(2012, 2, 5), new Date(2013, 1, 27));
+precure.smile = new precure.Series("スマイルプリキュア!", new Date("Sun Feb 05 2012 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 27 2013 00:00:00 GMT+0900 (JST)"));
 
 var miyuki = new precure.Girl([
     "星空みゆき",
@@ -590,7 +590,7 @@ precure.smile.girls[4] = reika;
  * @constant
  * @type precure.Series
  */
-precure.dokidoki = new precure.Series("ドキドキ!プリキュア", new Date(2013, 2, 3), new Date(2014, 1, 26));
+precure.dokidoki = new precure.Series("ドキドキ!プリキュア", new Date("Sun Feb 03 2013 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 26 2014 08:30:00 GMT+0900 (JST)"));
 
 var mana = new precure.Girl([
     "相田マナ",
@@ -648,14 +648,14 @@ precure.dokidoki.girls[4] = aguri;
  * @constant
  * @type precure.Series
  */
-precure.happinesscharge = new precure.Series("ハピネスチャージプリキュア!", new Date(2014, 2, 2), new Date(2015, 1, 25));
+precure.happinesscharge = new precure.Series("ハピネスチャージプリキュア!", new Date("Sun Feb 02 2014 08:30:00 GMT+0900 (JST)"), null);
 
 var megumi = new precure.Girl([
     "愛乃めぐみ",
     "キュアラブリー"
 ], [
     null,
-    ""
+    "プリキュア！くるりんミラーチェンジ！\n世界に広がるビッグな愛！キュアラブリー！"
 ]);
 
 var hime = new precure.Girl([
@@ -663,23 +663,23 @@ var hime = new precure.Girl([
     "キュアプリンセス"
 ], [
     null,
-    ""
+    "プリキュア！くるりんミラーチェンジ！\n天空に舞う蒼き風！キュアプリンセス！"
 ]);
 
 var girl3 = new precure.Girl([
-    "",
-    "キュアフォーチュン"
-], [
-    null,
-    ""
-]);
-
-var girl4 = new precure.Girl([
-    "",
+    "大森ゆうこ",
     "キュアハニー"
 ], [
     null,
-    ""
+    "プリキュア！くるりんミラーチェンジ！\n大地にみのる命の光！キュアハニー！"
+]);
+
+var girl4 = new precure.Girl([
+    "氷川いおな",
+    "キュアフォーチュン"
+], [
+    null,
+    "プリキュア！きらりんスターシンフォニー！\n夜空にきらめく希望の星！キュアフォーチュン！"
 ]);
 
 precure.happinesscharge.girls[0] = megumi;
@@ -705,21 +705,21 @@ precure.now = precure.dokidoki;
  * @constant
  * @type precure.Series
  */
-precure.dx1 = new precure.Series("映画 プリキュアオールスターズDX みんなともだちっ☆奇跡の全員大集合!", new Date(2009, 3, 20), null);
+precure.dx1 = new precure.Series("映画 プリキュアオールスターズDX みんなともだちっ☆奇跡の全員大集合!", new Date("Fri Mar 20 2009 00:00:00 GMT+0900 (JST)"), null);
 /**
  * 映画 プリキュアオールスターズDX2 希望の光☆レインボージュエルを守れ!
  *
  * @constant
  * @type precure.Series
  */
-precure.dx2 = new precure.Series("映画 プリキュアオールスターズDX2 希望の光☆レインボージュエルを守れ!", new Date(2010, 3, 20), null);
+precure.dx2 = new precure.Series("映画 プリキュアオールスターズDX2 希望の光☆レインボージュエルを守れ!", new Date("Sat Mar 20 2010 00:00:00 GMT+0900 (JST)"), null);
 /**
  * 映画 プリキュアオールスターズDX3 未来にとどけ! 世界をつなぐ☆虹色の花
  *
  * @constant
  * @type precure.Series
  */
-precure.dx3 = new precure.Series("映画 プリキュアオールスターズDX3 未来にとどけ! 世界をつなぐ☆虹色の花", new Date(2011, 3, 19), null);
+precure.dx3 = new precure.Series("映画 プリキュアオールスターズDX3 未来にとどけ! 世界をつなぐ☆虹色の花", new Date("Sat Mar 19 2011 00:00:00 GMT+0900 (JST)"), null);
 
 /**
  * 映画 プリキュアオールスターズNewStage みらいのともだち
@@ -727,7 +727,7 @@ precure.dx3 = new precure.Series("映画 プリキュアオールスターズDX3
  * @constant
  * @type precure.Series
  */
-precure.ns1 = new precure.Series("映画 プリキュアオールスターズNewStage みらいのともだち", new Date(2012, 3, 17), null);
+precure.ns1 = new precure.Series("映画 プリキュアオールスターズNewStage みらいのともだち", new Date("Sat Mar 17 2012 00:00:00 GMT+0900 (JST)"), null);
 var ayumi = new precure.Girl([
     "坂上あゆみ",
     "キュアエコー"
@@ -743,7 +743,7 @@ precure.ns1.girls[0] = ayumi;
  * @constant
  * @type precure.Series
  */
-precure.ns2 = new precure.Series("映画 プリキュアオールスターズNewStage2 こころのともだち", new Date(2013, 3, 16), null);
+precure.ns2 = new precure.Series("映画 プリキュアオールスターズNewStage2 こころのともだち", new Date("Sat Mar 16 2013 00:00:00 GMT+0900 (JST)"), null);
 
 /**
  * 映画 プリキュアオールスターズNewStage3 永遠のともだち
@@ -751,7 +751,7 @@ precure.ns2 = new precure.Series("映画 プリキュアオールスターズNew
  * @constant
  * @type precure.Series
  */
-precure.ns3 = new precure.Series("映画 プリキュアオールスターズNewStage3 永遠のともだち", new Date(2014, 3, 15), null);
+precure.ns3 = new precure.Series("映画 プリキュアオールスターズNewStage3 永遠のともだち", new Date("Sat Mar 15 2014 00:00:00 GMT+0900 (JST)"), null);
 
 /**
  * 全プリキュアの配列

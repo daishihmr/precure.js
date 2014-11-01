@@ -6,14 +6,14 @@
  * @constant
  * @type precure.Series
  */
-precure.happinesscharge = new precure.Series("ハピネスチャージプリキュア!", new Date(2014, 2, 2), new Date(2015, 1, 25));
+precure.happinesscharge = new precure.Series("ハピネスチャージプリキュア!", new Date("Sun Feb 02 2014 08:30:00 GMT+0900 (JST)"), null);
 
 var megumi = new precure.Girl([
     "愛乃めぐみ",
     "キュアラブリー"
 ], [
     null,
-    ""
+    "プリキュア！くるりんミラーチェンジ！\n世界に広がるビッグな愛！キュアラブリー！"
 ]);
 
 var hime = new precure.Girl([
@@ -21,23 +21,23 @@ var hime = new precure.Girl([
     "キュアプリンセス"
 ], [
     null,
-    ""
+    "プリキュア！くるりんミラーチェンジ！\n天空に舞う蒼き風！キュアプリンセス！"
 ]);
 
 var girl3 = new precure.Girl([
-    "",
-    "キュアフォーチュン"
-], [
-    null,
-    ""
-]);
-
-var girl4 = new precure.Girl([
-    "",
+    "大森ゆうこ",
     "キュアハニー"
 ], [
     null,
-    ""
+    "プリキュア！くるりんミラーチェンジ！\n大地にみのる命の光！キュアハニー！"
+]);
+
+var girl4 = new precure.Girl([
+    "氷川いおな",
+    "キュアフォーチュン"
+], [
+    null,
+    "プリキュア！きらりんスターシンフォニー！\n夜空にきらめく希望の星！キュアフォーチュン！"
 ]);
 
 precure.happinesscharge.girls[0] = megumi;

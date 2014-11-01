@@ -6,7 +6,7 @@
  * @constant
  * @type precure.Series
  */
-precure.heartcatch = new precure.Series("ハートキャッチプリキュア!", new Date(2010, 2, 7), new Date(2011, 1, 30));
+precure.heartcatch = new precure.Series("ハートキャッチプリキュア!", new Date("Sun Feb 07 2010 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 30 2011 08:30:00 GMT+0900 (JST)"));
 
 var tsubomi = new precure.Girl([
     "花咲つぼみ",
