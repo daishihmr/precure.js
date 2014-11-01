@@ -889,7 +889,7 @@ girl4.setExtraData({
  * @type precure.Series
  * @const
  */
-precure.now = precure.dokidoki;
+precure.now = precure.happinesscharge;
 
 /**
  * 映画 プリキュアオールスターズDX みんなともだちっ☆奇跡の全員大集合!

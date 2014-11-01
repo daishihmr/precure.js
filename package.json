@@ -1,6 +1,6 @@
 {
   "name": "precure.js",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "All about Japanese battle heroine \"Pretty Cure (Precure)\"",
   "main": "./build/precure-node.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://tomcat.dev7.jp/gitbucket/git/daishi/precure.git"
+    "url": "https://github.com/daishihmr/precure.js.git"
   },
   "author": "daishi_hmr",
   "license": "MIT",

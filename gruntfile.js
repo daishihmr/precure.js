@@ -76,5 +76,5 @@ module.exports = function(grunt) {
 
     });
 
-    grunt.registerTask('default', ['jasmine', 'concat', 'uglify', 'jsdoc']);
+    grunt.registerTask('default', ['jasmine', 'concat', 'uglify']);
 };
