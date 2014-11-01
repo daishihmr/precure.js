@@ -14,7 +14,7 @@ describe("test happinesscharge", function() {
         expect(girl.state).toEqual(1);
         expect(girl.name).toEqual("キュアラブリー");
     });
-    
+
     it("ハピネスチャージの2人目", function() {
         var girl = precure.happinesscharge.girls[1];
 
@@ -29,37 +29,37 @@ describe("test happinesscharge", function() {
         expect(girl.state).toEqual(1);
         expect(girl.name).toEqual("キュアプリンセス");
     });
-    
+
     it("ハピネスチャージの3人目", function() {
         var girl = precure.happinesscharge.girls[2];
 
-        // expect(girl.humanName).toEqual(""); // TODO
-        expect(girl.precureName).toEqual("キュアフォーチュン");
-
-        expect(girl.state).toEqual(0);
-        // expect(girl.name).toEqual(""); // TODO
-
-        girl.transform();
-
-        expect(girl.state).toEqual(1);
-        expect(girl.name).toEqual("キュアフォーチュン");
-    });
-    
-    it("ハピネスチャージの4人目", function() {
-        var girl = precure.happinesscharge.girls[3];
-
-        // expect(girl.humanName).toEqual(""); // TODO
+        expect(girl.humanName).toEqual("大森ゆうこ");
         expect(girl.precureName).toEqual("キュアハニー");
 
         expect(girl.state).toEqual(0);
-        // expect(girl.name).toEqual(""); // TODO
+        expect(girl.name).toEqual("大森ゆうこ");
 
         girl.transform();
 
         expect(girl.state).toEqual(1);
         expect(girl.name).toEqual("キュアハニー");
     });
-    
+
+    it("ハピネスチャージの4人目", function() {
+        var girl = precure.happinesscharge.girls[3];
+
+        expect(girl.humanName).toEqual("氷川いおな");
+        expect(girl.precureName).toEqual("キュアフォーチュン");
+
+        expect(girl.state).toEqual(0);
+        expect(girl.name).toEqual("氷川いおな");
+
+        girl.transform();
+
+        expect(girl.state).toEqual(1);
+        expect(girl.name).toEqual("キュアフォーチュン");
+    });
+
     it("ハピネスチャージの作品情報", function() {
         expect(precure.happinesscharge.girls.length).toEqual(4);
     });

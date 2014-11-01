@@ -6,14 +6,15 @@
  * @constant
  * @type precure.Series
  */
-precure.dokidoki = new precure.Series("ドキドキ!プリキュア", new Date(2013, 2, 3), new Date(2014, 1, 26));
+precure.dokidoki = new precure.Series("ドキドキ!プリキュア", new Date("Sun Feb 03 2013 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 26 2014 08:30:00 GMT+0900 (JST)"));
+precure.series.push(precure.dokidoki);
 
 var mana = new precure.Girl([
     "相田マナ",
     "キュアハート"
 ], [
     null,
-    "みなぎる愛！キュアハート！"
+    "プリキュア・ラブリンク！\nみなぎる愛！キュアハート！"
 ]);
 
 var rikka = new precure.Girl([
@@ -21,7 +22,7 @@ var rikka = new precure.Girl([
     "キュアダイヤモンド"
 ], [
     null,
-    "英知の光！キュアダイヤモンド！"
+    "プリキュア・ラブリンク！\n英知の光！キュアダイヤモンド！"
 ]);
 
 var alice = new precure.Girl([
@@ -29,7 +30,7 @@ var alice = new precure.Girl([
     "キュアロゼッタ"
 ], [
     null,
-    "ひだまりポカポカ！キュアロゼッタ！"
+    "プリキュア・ラブリンク！\nひだまりポカポカ！キュアロゼッタ！"
 ]);
 
 var makoto = new precure.Girl([
@@ -37,7 +38,7 @@ var makoto = new precure.Girl([
     "キュアソード"
 ], [
     null,
-    "勇気の刃！キュアソード！"
+    "プリキュア・ラブリンク！\n勇気の刃！キュアソード！"
 ]);
 
 var aguri = new precure.Girl([
@@ -45,7 +46,7 @@ var aguri = new precure.Girl([
     "キュアエース"
 ], [
     null,
-    "愛の切り札！キュアエース！"
+    "プリキュア・ドレスアップ！\n愛の切り札！キュアエース！"
 ]);
 
 precure.dokidoki.girls[0] = mana;
@@ -53,5 +54,21 @@ precure.dokidoki.girls[1] = rikka;
 precure.dokidoki.girls[2] = alice;
 precure.dokidoki.girls[3] = makoto;
 precure.dokidoki.girls[4] = aguri;
+
+mana.setExtraData({
+    "cv": "生天目仁美"
+});
+rikka.setExtraData({
+    "cv": "寿美菜子"
+});
+alice.setExtraData({
+    "cv": "渕上舞"
+});
+makoto.setExtraData({
+    "cv": "宮本佳那子"
+});
+aguri.setExtraData({
+    "cv": "釘宮理恵"
+});
 
 })();

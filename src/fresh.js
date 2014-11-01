@@ -6,7 +6,8 @@
  * @constant
  * @type precure.Series
  */
-precure.fresh = new precure.Series("フレッシュプリキュア!", new Date(2009, 2, 1), new Date(2010, 1, 31));
+precure.fresh = new precure.Series("フレッシュプリキュア!", new Date("Sun Feb 01 2009 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 31 2010 08:30:00 GMT+0900 (JST)"));
+precure.series.push(precure.fresh);
 
 var love = new precure.Girl([
     "桃園ラブ",
@@ -44,5 +45,18 @@ precure.fresh.girls[0] = love;
 precure.fresh.girls[1] = mktn;
 precure.fresh.girls[2] = bukky;
 precure.fresh.girls[3] = setsuna;
+
+love.setExtraData({
+    "cv": "沖佳苗"
+});
+mktn.setExtraData({
+    "cv": "喜多村英梨"
+});
+bukky.setExtraData({
+    "cv": "中川亜紀子"
+});
+setsuna.setExtraData({
+    "cv": "小松由佳"
+});
 
 })();

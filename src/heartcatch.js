@@ -6,7 +6,8 @@
  * @constant
  * @type precure.Series
  */
-precure.heartcatch = new precure.Series("ハートキャッチプリキュア!", new Date(2010, 2, 7), new Date(2011, 1, 30));
+precure.heartcatch = new precure.Series("ハートキャッチプリキュア!", new Date("Sun Feb 07 2010 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 30 2011 08:30:00 GMT+0900 (JST)"));
+precure.series.push(precure.heartcatch);
 
 var tsubomi = new precure.Girl([
     "花咲つぼみ",
@@ -44,5 +45,18 @@ precure.heartcatch.girls[0] = tsubomi;
 precure.heartcatch.girls[1] = erika;
 precure.heartcatch.girls[2] = itsuki;
 precure.heartcatch.girls[3] = yuri;
+
+tsubomi.setExtraData({
+    "cv": "水樹奈々"
+});
+erika.setExtraData({
+    "cv": "水沢史絵"
+});
+itsuki.setExtraData({
+    "cv": "桑島法子"
+});
+yuri.setExtraData({
+    "cv": "久川綾"
+});
 
 })();

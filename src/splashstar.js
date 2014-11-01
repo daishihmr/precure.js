@@ -6,7 +6,8 @@
  * @constant
  * @type precure.Series
  */
-precure.splashstar = new precure.Series("ふたりはプリキュア Splash Star", new Date(2006, 2, 5), new Date(2007, 1, 28));
+precure.splashstar = new precure.Series("ふたりはプリキュア Splash Star", new Date("Sun Feb 05 2006 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 28 2007 08:30:00 GMT+0900 (JST)"));
+precure.series.push(precure.splashstar);
 
 var common = "聖なる泉を汚す者よ！\nアコギな真似はおやめなさい！";
 var msg1 = "デュアル・スピリチュアル・パワー！\n花開け、大地に！\n羽ばたけ、空に！\n輝く金の花！キュアブルーム！\n煌く銀の翼！キュアイーグレット！\nふたりはプリキュア！";
@@ -34,5 +35,14 @@ var mai = new precure.Girl([
 
 precure.splashstar.girls[0] = saki;
 precure.splashstar.girls[1] = mai;
+
+saki.setExtraData({
+    "cv": "樹元オリエ",
+    "birthday": new Date("Mon Sep 07 1992 00:00:00 GMT+0900 (JST)")
+});
+mai.setExtraData({
+    "cv": "榎本温子",
+    "birthday": new Date("Sun Dec 20 1992 00:00:00 GMT+0900 (JST)")
+});
 
 })();

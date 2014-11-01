@@ -6,7 +6,8 @@
  * @constant
  * @type precure.Series
  */
-precure.smile = new precure.Series("スマイルプリキュア!", new Date(2012, 2, 5), new Date(2013, 1, 27));
+precure.smile = new precure.Series("スマイルプリキュア!", new Date("Sun Feb 05 2012 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 27 2013 00:00:00 GMT+0900 (JST)"));
+precure.series.push(precure.smile);
 
 var miyuki = new precure.Girl([
     "星空みゆき",
@@ -53,5 +54,21 @@ precure.smile.girls[1] = akane;
 precure.smile.girls[2] = yayoi;
 precure.smile.girls[3] = nao;
 precure.smile.girls[4] = reika;
+
+miyuki.setExtraData({
+    "cv": "福圓美里"
+});
+akane.setExtraData({
+    "cv": "田野アサミ"
+});
+yayoi.setExtraData({
+    "cv": "金元寿子"
+});
+nao.setExtraData({
+    "cv": "井上麻里奈"
+});
+reika.setExtraData({
+    "cv": "西村ちなみ"
+});
 
 })();
