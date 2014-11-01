@@ -6,11 +6,17 @@ var precure = {};
 (function() {
 
 /**
+ * 全TVシリーズの配列
+ * @type {Array.<precure.Series>}
+ */
+precure.series = [];
+
+/**
  * 作品クラス
  *
  * @class
  * @constructor
- * @property {String} title 作品タイトル
+ * @property {string} title 作品タイトル
  * @property {Date} startedDate 放送開始日時
  * @property {Date} endedDate 放送終了日時
  */
@@ -26,9 +32,9 @@ precure.Series = function(title, startedDate, endedDate) {
  *
  * @static
  * @memberOf precure.Series
- * @type {Array.<String>}
+ * @type {Array.<string>}
  */
-precure.Series.NAMES = [
+precure.Series.TITLES = [
     "unmarked",
     "maxheart",
     "splashstar",
@@ -47,9 +53,9 @@ precure.Series.NAMES = [
  *
  * @static
  * @memberOf precure.Series
- * @type {Array.<String>}
+ * @type {Array.<string>}
  */
-precure.Series.NAMES = [
+precure.Series.ALL_STARS_TITLES = [
     "dx1",
     "dx2",
     "dx3",
@@ -63,10 +69,10 @@ precure.Series.NAMES = [
  *
  * @class
  * @constructor
- * @property {String[]} names 名前のリスト。stateと項番が一致する名前の配列。
- * @property {String[]} transformMessages 変身時メッセージのリストstateと項番が一致する形態への変身時に使用するメッセージの配列
- * @property {String} partner パートナーの名前
- * @property {Number} state 状態。初期値を0とし、以後変身の度に1ずつ増加する
+ * @property {string[]} names 名前のリスト。stateと項番が一致する名前の配列。
+ * @property {string[]} transformMessages 変身時メッセージのリストstateと項番が一致する形態への変身時に使用するメッセージの配列
+ * @property {string} partner パートナーの名前
+ * @property {number} state 状態。初期値を0とし、以後変身の度に1ずつ増加する
  */
 precure.Girl = function(names, transformMessages, partner) {
     this.names = names;
@@ -76,8 +82,20 @@ precure.Girl = function(names, transformMessages, partner) {
     this.humanName = names[0];
     this.precureName = names[1];
 
+    this.cv = null;
+
     this.state = 0;
     this._updateState();
+};
+
+/**
+ * プリキュアに拡張データを設定します。
+ * @param {Object.<string, *>}
+ */
+precure.Girl.prototype.setExtraData = function(data) {
+    for (var key in data) if (data.hasOwnProperty(key)) {
+        this[key] = data[key];
+    }
 };
 
 /**
@@ -86,11 +104,11 @@ precure.Girl = function(names, transformMessages, partner) {
  * 
  * @methodOf precure.Girl
  * @param {precure.Girl} [partner] パートナー(オプション)
- * @returns {String}
+ * @returns {string}
  * @throws {precure.PartnerInvalidError} 変身にパートナーを要する場合、正しい引数を与えずに実行すると例外を投げます。
  */
 precure.Girl.prototype.transform = function(partner) {
-    if (this.partner !== undefined && this.partner !== partner.humanName) {
+    if (this.partner !== undefined && (partner === undefined || this.partner !== partner.humanName)) {
         throw new precure.PartnerInvalidError();
     }
 
@@ -102,6 +120,10 @@ precure.Girl.prototype.transform = function(partner) {
     }
 
     return this.transformMessages[this.state] || null;
+};
+
+precure.Girl.prototype.toString = function() {
+    return this.name;
 };
 
 /**
