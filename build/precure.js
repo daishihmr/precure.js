@@ -86,6 +86,14 @@ precure.Girl = function(names, transformMessages, partner) {
 
     this.state = 0;
     this._updateState();
+
+    this.info = {};
+};
+
+precure.Girl.prototype.addInfo = function(info) {
+    for (var key in info) if (info.hasOwnProperty(key)) {
+        this.info[key] = info[key];
+    }
 };
 
 /**
@@ -825,7 +833,7 @@ var megumi = new precure.Girl([
     "キュアラブリー"
 ], [
     null,
-    "プリキュア！くるりんミラーチェンジ！\n世界に広がるビッグな愛！キュアラブリー！"
+    "プリキュア・くるりんミラーチェンジ！\n世界に広がるビッグな愛！キュアラブリー！"
 ]);
 
 var hime = new precure.Girl([
@@ -833,7 +841,7 @@ var hime = new precure.Girl([
     "キュアプリンセス"
 ], [
     null,
-    "プリキュア、くるりんミラーチェンジ！\n天空に舞う蒼き風！キュアプリンセス！"
+    "プリキュア・くるりんミラーチェンジ！\n天空に舞う蒼き風！キュアプリンセス！"
 ]);
 
 var girl3 = new precure.Girl([
@@ -841,7 +849,7 @@ var girl3 = new precure.Girl([
     "キュアハニー"
 ], [
     null,
-    "プリキュア！くるりんミラーチェンジ！\n大地にみのる命の光！キュアハニー！"
+    "プリキュア・くるりんミラーチェンジ！\n大地に実る命の光！キュアハニー！"
 ]);
 
 var girl4 = new precure.Girl([
@@ -849,7 +857,7 @@ var girl4 = new precure.Girl([
     "キュアフォーチュン"
 ], [
     null,
-    "プリキュア！きらりんスターシンフォニー！\n夜空にきらめく希望の星！キュアフォーチュン！"
+    "プリキュア・きらりんスターシンフォニー！\n夜空にきらめく希望の星！キュアフォーチュン！"
 ]);
 
 precure.happinesscharge.girls[0] = megumi;
