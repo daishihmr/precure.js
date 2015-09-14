@@ -56,4 +56,13 @@ luminus.setExtraData({
     "birthday": new Date("Fri Oct 09 1992 00:00:00 GMT+0900 (JST)")
 });
 
+var team = new precure.Team(2);
+team.add(black);
+team.add(white);
+team.on("completed", function() {
+    precure.out("闇の力のしもべたちよ!\nとっととお家に帰りなさい!");
+});
+
+precure.maxheart.team = team;
+
 })();

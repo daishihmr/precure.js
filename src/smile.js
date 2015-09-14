@@ -75,4 +75,16 @@ reika.setExtraData({
     "cv": "西村ちなみ"
 });
 
+var team = new precure.Team(5);
+team.add(miyuki);
+team.add(akane);
+team.add(yayoi);
+team.add(nao);
+team.add(reika);
+team.on("completed", function() {
+    precure.out("5つの光が導く未来! 輝け!スマイルプリキュア!");
+});
+
+precure.smile.team = team;
+
 })();

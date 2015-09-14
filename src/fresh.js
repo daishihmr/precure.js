@@ -63,4 +63,15 @@ setsuna.setExtraData({
     "cv": "小松由佳"
 });
 
+var team = new precure.Team(4);
+team.add(love);
+team.add(mktn);
+team.add(bukky);
+team.add(setsuna);
+team.on("completed", function() {
+    precure.out("レッツ、プリキュア!");
+});
+
+precure.fresh.team = team;
+
 })();

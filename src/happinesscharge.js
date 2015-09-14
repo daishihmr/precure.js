@@ -64,4 +64,15 @@ iona.setExtraData({
     "cv": "戸松遥"
 });
 
+var team = new precure.Team(4);
+team.add(megumi);
+team.add(hime);
+team.add(yuyu);
+team.add(iona);
+team.on("completed", function() {
+    precure.out("ハピネス注入幸せチャージ! ハピネスチャージプリキュア!");
+});
+
+precure.happinesscharge.team = team;
+
 })();

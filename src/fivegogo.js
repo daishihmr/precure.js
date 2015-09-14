@@ -87,4 +87,16 @@ kurumi.setExtraData({
     "cv": "仙台エリ"
 });
 
+var team = new precure.Team(5);
+team.add(nozomi);
+team.add(rin);
+team.add(urara);
+team.add(komachi);
+team.add(karen);
+team.on("completed", function() {
+    precure.out("希望の力と未来の光\n華麗に羽ばたく5つの心\nYes!プリキュア5!");
+});
+
+precure.fivegogo.team = team;
+
 })();

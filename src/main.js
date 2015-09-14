@@ -5,6 +5,28 @@ var precure = {};
 
 (function() {
 
+precure.out = function(args) {
+    console.log.apply(console, arguments);
+};
+
+precure.EventDispatcher = function() {
+    this._listeners = {};
+};
+precure.EventDispatcher.prototype.on = function(type, listener) {
+    if (this._listeners[type] == null) {
+        this._listeners[type] = [];
+    }
+    this._listeners[type].push(listener);
+};
+precure.EventDispatcher.prototype.fire = function(type) {
+    var self = this;
+    if (this._listeners[type] != null) {
+        this._listeners[type].forEach(function(listener) {
+            listener.apply(self);
+        });
+    }
+};
+
 /**
  * 全TVシリーズの配列
  * @type {Array.<precure.Series>}
@@ -62,7 +84,8 @@ precure.Series.ALL_STARS_TITLES = [
     "dx3",
     "ns1",
     "ns2",
-    "ns3"
+    "ns3",
+    "springCarnival",
 ];
 
 /**
@@ -76,6 +99,8 @@ precure.Series.ALL_STARS_TITLES = [
  * @property {number} state 状態。初期値を0とし、以後変身の度に1ずつ増加する
  */
 precure.Girl = function(names, transformMessages, partner) {
+    precure.EventDispatcher.call(this);
+
     this.names = names;
     this.transformMessages = transformMessages;
     this.partner = partner;
@@ -85,11 +110,11 @@ precure.Girl = function(names, transformMessages, partner) {
 
     this.cv = null;
 
-    this.state = 0;
-    this._updateState();
+    this._updateState(0);
 
     this.info = {};
 };
+precure.Girl.prototype = Object.create(precure.EventDispatcher.prototype);
 
 precure.Girl.prototype.addInfo = function(info) {
     for (var key in info) if (info.hasOwnProperty(key)) {
@@ -124,12 +149,14 @@ precure.Girl.prototype.transform = function(partner) {
         throw new Error();
     }
 
+    var result = this.transformMessages[this.state + 1];
+
+    precure.out(result);
+
     this._updateState(this.state + 1);
     if (partner) {
         partner._updateState(partner.state + 1);
     }
-
-    return this.transformMessages[this.state];
 };
 
 precure.Girl.prototype.toString = function() {
@@ -146,7 +173,7 @@ precure.Girl.prototype.humanize = function() {
 };
 
 /**
- * stateが変化した時に呼びだされます。
+ * stateを更新します。
  *
  * @private
  * @methodOf precure.Girl
@@ -154,6 +181,29 @@ precure.Girl.prototype.humanize = function() {
 precure.Girl.prototype._updateState = function(state) {
     this.state = state;
     this.name = this.names[this.state];
+    this.fire("transformed");
+};
+
+precure.Team = function(completeCount, state) {
+    precure.EventDispatcher.call(this);
+    
+    this.girls = [];
+    this.transformedCount = 0;
+    this.completeCount = completeCount;
+    this.state = state || 1;
+};
+precure.Team.prototype = Object.create(precure.EventDispatcher.prototype);
+precure.Team.prototype.add = function(girl) {
+    var self = this;
+    girl.on("transformed", function() {
+        if (this.state == self.state) {
+            self.transformedCount += 1;
+            if (self.transformedCount == self.completeCount) {
+                self.fire("completed");
+            }
+        }
+    });
+    this.girls.push(girl);
 };
 
 /**

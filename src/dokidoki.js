@@ -75,4 +75,16 @@ aguri.setExtraData({
     "cv": "釘宮理恵"
 });
 
+var team = new precure.Team(5);
+team.add(mana);
+team.add(rikka);
+team.add(alice);
+team.add(makoto);
+team.add(aguri);
+team.on("completed", function() {
+    precure.out("響け! 愛の鼓動! ドキドキ!プリキュア!");
+});
+
+precure.dokidoki.team = team;
+
 })();

@@ -49,4 +49,13 @@ mai.setExtraData({
     "birthday": new Date("Sun Dec 20 1992 00:00:00 GMT+0900 (JST)")
 });
 
+var team = new precure.Team(2);
+team.add(saki);
+team.add(mai);
+team.on("completed", function() {
+    precure.out("聖なる泉を汚す者よ!\nアコギな真似はお止めなさい!");
+});
+
+precure.splashstar.team = team;
+
 })();

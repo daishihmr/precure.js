@@ -65,4 +65,15 @@ ako.setExtraData({
     "cv": "大久保瑠美"
 });
 
+var team = new precure.Team(4);
+team.add(hibiki);
+team.add(kanade);
+team.add(ellen);
+team.add(ako);
+team.on("completed", function() {
+    precure.out("届け、" + this.completeCount + "人の組曲! スイートプリキュア!");
+});
+
+precure.suite.team = team;
+
 })();

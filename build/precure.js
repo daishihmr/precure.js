@@ -5,6 +5,28 @@ var precure = {};
 
 (function() {
 
+precure.out = function(args) {
+    console.log.apply(console, arguments);
+};
+
+precure.EventDispatcher = function() {
+    this._listeners = {};
+};
+precure.EventDispatcher.prototype.on = function(type, listener) {
+    if (this._listeners[type] == null) {
+        this._listeners[type] = [];
+    }
+    this._listeners[type].push(listener);
+};
+precure.EventDispatcher.prototype.fire = function(type) {
+    var self = this;
+    if (this._listeners[type] != null) {
+        this._listeners[type].forEach(function(listener) {
+            listener.apply(self);
+        });
+    }
+};
+
 /**
  * 全TVシリーズの配列
  * @type {Array.<precure.Series>}
@@ -62,7 +84,8 @@ precure.Series.ALL_STARS_TITLES = [
     "dx3",
     "ns1",
     "ns2",
-    "ns3"
+    "ns3",
+    "springCarnival",
 ];
 
 /**
@@ -76,6 +99,8 @@ precure.Series.ALL_STARS_TITLES = [
  * @property {number} state 状態。初期値を0とし、以後変身の度に1ずつ増加する
  */
 precure.Girl = function(names, transformMessages, partner) {
+    precure.EventDispatcher.call(this);
+
     this.names = names;
     this.transformMessages = transformMessages;
     this.partner = partner;
@@ -85,11 +110,11 @@ precure.Girl = function(names, transformMessages, partner) {
 
     this.cv = null;
 
-    this.state = 0;
-    this._updateState();
+    this._updateState(0);
 
     this.info = {};
 };
+precure.Girl.prototype = Object.create(precure.EventDispatcher.prototype);
 
 precure.Girl.prototype.addInfo = function(info) {
     for (var key in info) if (info.hasOwnProperty(key)) {
@@ -120,15 +145,18 @@ precure.Girl.prototype.transform = function(partner) {
     if (this.partner !== undefined && (partner === undefined || this.partner !== partner.humanName)) {
         throw new precure.PartnerInvalidError();
     }
-
-    this.state = Math.min(this.state + 1, this.names.length - 1);
-    this._updateState();
-    if (partner) {
-        partner.state = Math.min(partner.state + 1, partner.names.length - 1);
-        partner._updateState();
+    if (this.names.length - 1 <= this.state) {
+        throw new Error();
     }
 
-    return this.transformMessages[this.state] || null;
+    var result = this.transformMessages[this.state + 1];
+
+    precure.out(result);
+
+    this._updateState(this.state + 1);
+    if (partner) {
+        partner._updateState(partner.state + 1);
+    }
 };
 
 precure.Girl.prototype.toString = function() {
@@ -141,18 +169,41 @@ precure.Girl.prototype.toString = function() {
  * @methodOf precure.Girl
  */
 precure.Girl.prototype.humanize = function() {
-    this.state = 0;
-    this._updateState();
+    this._updateState(0);
 };
 
 /**
- * stateが変化した時に呼びだされます。
+ * stateを更新します。
  *
  * @private
  * @methodOf precure.Girl
  */
-precure.Girl.prototype._updateState = function() {
+precure.Girl.prototype._updateState = function(state) {
+    this.state = state;
     this.name = this.names[this.state];
+    this.fire("transformed");
+};
+
+precure.Team = function(completeCount, state) {
+    precure.EventDispatcher.call(this);
+    
+    this.girls = [];
+    this.transformedCount = 0;
+    this.completeCount = completeCount;
+    this.state = state || 1;
+};
+precure.Team.prototype = Object.create(precure.EventDispatcher.prototype);
+precure.Team.prototype.add = function(girl) {
+    var self = this;
+    girl.on("transformed", function() {
+        if (this.state == self.state) {
+            self.transformedCount += 1;
+            if (self.transformedCount == self.completeCount) {
+                self.fire("completed");
+            }
+        }
+    });
+    this.girls.push(girl);
 };
 
 /**
@@ -211,6 +262,15 @@ white.setExtraData({
     "cv": "ゆかな",
     "birthday": new Date("Fri May 04 1990 00:00:00 GMT+0900 (JST)")
 });
+
+var team = new precure.Team(2);
+team.add(black);
+team.add(white);
+team.on("completed", function() {
+    precure.out("闇の力のしもべたちよ!\nとっととお家に帰りなさい!");
+});
+
+precure.unmarked.team = team;
 
 })();
 
@@ -272,6 +332,15 @@ luminus.setExtraData({
     "birthday": new Date("Fri Oct 09 1992 00:00:00 GMT+0900 (JST)")
 });
 
+var team = new precure.Team(2);
+team.add(black);
+team.add(white);
+team.on("completed", function() {
+    precure.out("闇の力のしもべたちよ!\nとっととお家に帰りなさい!");
+});
+
+precure.maxheart.team = team;
+
 })();
 
 (function() {
@@ -324,6 +393,15 @@ mai.setExtraData({
     "cv": "榎本温子",
     "birthday": new Date("Sun Dec 20 1992 00:00:00 GMT+0900 (JST)")
 });
+
+var team = new precure.Team(2);
+team.add(saki);
+team.add(mai);
+team.on("completed", function() {
+    precure.out("聖なる泉を汚す者よ!\nアコギな真似はお止めなさい!");
+});
+
+precure.splashstar.team = team;
 
 })();
 
@@ -403,6 +481,18 @@ komachi.setExtraData({
 karen.setExtraData({
     "cv": "前田愛"
 });
+
+var team = new precure.Team(5);
+team.add(nozomi);
+team.add(rin);
+team.add(urara);
+team.add(komachi);
+team.add(karen);
+team.on("completed", function() {
+    precure.out("希望の力と未来の光\n華麗に羽ばたく5つの心\nYes!プリキュア5!");
+});
+
+precure.five.team = team;
 
 })();
 
@@ -495,6 +585,18 @@ kurumi.setExtraData({
     "cv": "仙台エリ"
 });
 
+var team = new precure.Team(5);
+team.add(nozomi);
+team.add(rin);
+team.add(urara);
+team.add(komachi);
+team.add(karen);
+team.on("completed", function() {
+    precure.out("希望の力と未来の光\n華麗に羽ばたく5つの心\nYes!プリキュア5!");
+});
+
+precure.fivegogo.team = team;
+
 })();
 
 (function() {
@@ -562,6 +664,17 @@ setsuna.setExtraData({
     "cv": "小松由佳"
 });
 
+var team = new precure.Team(4);
+team.add(love);
+team.add(mktn);
+team.add(bukky);
+team.add(setsuna);
+team.on("completed", function() {
+    precure.out("レッツ、プリキュア!");
+});
+
+precure.fresh.team = team;
+
 })();
 
 (function() {
@@ -628,6 +741,17 @@ itsuki.setExtraData({
 yuri.setExtraData({
     "cv": "久川綾"
 });
+
+var team = new precure.Team(4);
+team.add(tsubomi);
+team.add(erika);
+team.add(itsuki);
+team.add(yuri);
+team.on("completed", function() {
+    precure.out("ハートキャッチプリキュア!");
+});
+
+precure.heartcatch.team = team;
 
 })();
 
@@ -697,6 +821,17 @@ ellen.setExtraData({
 ako.setExtraData({
     "cv": "大久保瑠美"
 });
+
+var team = new precure.Team(4);
+team.add(hibiki);
+team.add(kanade);
+team.add(ellen);
+team.add(ako);
+team.on("completed", function() {
+    precure.out("届け、" + this.completeCount + "人の組曲! スイートプリキュア!");
+});
+
+precure.suite.team = team;
 
 })();
 
@@ -777,6 +912,18 @@ reika.setExtraData({
     "cv": "西村ちなみ"
 });
 
+var team = new precure.Team(5);
+team.add(miyuki);
+team.add(akane);
+team.add(yayoi);
+team.add(nao);
+team.add(reika);
+team.on("completed", function() {
+    precure.out("5つの光が導く未来! 輝け!スマイルプリキュア!");
+});
+
+precure.smile.team = team;
+
 })();
 
 (function() {
@@ -856,6 +1003,18 @@ aguri.setExtraData({
     "cv": "釘宮理恵"
 });
 
+var team = new precure.Team(5);
+team.add(mana);
+team.add(rikka);
+team.add(alice);
+team.add(makoto);
+team.add(aguri);
+team.on("completed", function() {
+    precure.out("響け! 愛の鼓動! ドキドキ!プリキュア!");
+});
+
+precure.dokidoki.team = team;
+
 })();
 
 (function() {
@@ -924,6 +1083,17 @@ iona.setExtraData({
     "cv": "戸松遥"
 });
 
+var team = new precure.Team(4);
+team.add(megumi);
+team.add(hime);
+team.add(yuyu);
+team.add(iona);
+team.on("completed", function() {
+    precure.out("ハピネス注入幸せチャージ! ハピネスチャージプリキュア!");
+});
+
+precure.happinesscharge.team = team;
+
 })();
 
 (function() {
@@ -946,7 +1116,7 @@ var girl0 = new precure.Girl([
     "キュアフローラ"
 ], [
     null,
-    "プリキュア、プリンセスエンゲージ!\n咲きほこる花のプリンセス! キュアフローラ!\n冷たい檻に閉ざされた夢、返していただきますわ!\nお覚悟は、よろしくて?"
+    "プリキュア、プリンセスエンゲージ!\n咲きほこる花のプリンセス! キュアフローラ!"
 ]);
 
 var girl1 = new precure.Girl([
@@ -954,7 +1124,7 @@ var girl1 = new precure.Girl([
     "キュアマーメイド"
 ], [
     null,
-    "プリキュア、プリンセスエンゲージ!\n澄みわたる海のプリンセス! キュアマーメイド!\n冷たい檻に閉ざされた夢、返していただきますわ!\nお覚悟は、よろしくて?"
+    "プリキュア、プリンセスエンゲージ!\n澄みわたる海のプリンセス! キュアマーメイド!"
 ]);
 
 var girl2 = new precure.Girl([
@@ -962,7 +1132,7 @@ var girl2 = new precure.Girl([
     "キュアトゥインクル"
 ], [
     null,
-    "プリキュア、プリンセスエンゲージ!\nきらめく星のプリンセス! キュアトゥインクル!\n冷たい檻に閉ざされた夢、返していただきますわ!\nお覚悟は、よろしくて?"
+    "プリキュア、プリンセスエンゲージ!\nきらめく星のプリンセス! キュアトゥインクル!"
 ]);
 
 var girl3 = new precure.Girl([
@@ -970,7 +1140,7 @@ var girl3 = new precure.Girl([
     "キュアスカーレット"
 ], [
     null,
-    "プリキュア、プリンセスエンゲージ!\n深紅の炎のプリンセス! キュアスカーレット!\n冷たい檻に閉ざされた夢、返していただきますわ!\nお覚悟決めなさい!"
+    "プリキュア、プリンセスエンゲージ!\n深紅の炎のプリンセス! キュアスカーレット!"
 ]);
 
 precure.goprincess.girls[0] = girl0;
@@ -991,6 +1161,22 @@ girl3.setExtraData({
     "cv": "沢城みゆき"
 });
 
+var team = new precure.Team(4);
+team.add(girl0);
+team.add(girl1);
+team.add(girl2);
+team.add(girl3);
+team.leader = girl0;
+team.on("completed", function() {
+    if (this.leader == girl3) {
+        precure.out("冷たい檻に閉ざされた夢、返していただきますわ!\nお覚悟は、決めなさい!");
+    } else {
+        precure.out("冷たい檻に閉ざされた夢、返していただきますわ!\nお覚悟は、よろしくて?");
+    }
+});
+
+precure.goprincess.team = team;
+
 })();
 
 (function() {
@@ -1001,7 +1187,7 @@ girl3.setExtraData({
  * @type precure.Series
  * @const
  */
-precure.now = precure.happinesscharge;
+precure.now = precure.goprincess;
 
 /**
  * 映画 プリキュアオールスターズDX みんなともだちっ☆奇跡の全員大集合!
@@ -1060,6 +1246,14 @@ precure.ns2 = new precure.Series("映画 プリキュアオールスターズNew
  * @type precure.Series
  */
 precure.ns3 = new precure.Series("映画 プリキュアオールスターズNewStage3 永遠のともだち", new Date("Sat Mar 15 2014 00:00:00 GMT+0900 (JST)"), null);
+
+/**
+ * 映画 プリキュアオールスターズ 春のカーニバル
+ *
+ * @constant
+ * @type precure.Series
+ */
+precure.springCarnival = new precure.Series("映画 プリキュアオールスターズ 春のカーニバル", new Date("Sat Mar 14 2015 00:00:00 GMT+0900 (JST)"), null);
 
 /**
  * 全プリキュアの配列

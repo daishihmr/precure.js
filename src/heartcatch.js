@@ -63,4 +63,15 @@ yuri.setExtraData({
     "cv": "久川綾"
 });
 
+var team = new precure.Team(4);
+team.add(tsubomi);
+team.add(erika);
+team.add(itsuki);
+team.add(yuri);
+team.on("completed", function() {
+    precure.out("ハートキャッチプリキュア!");
+});
+
+precure.heartcatch.team = team;
+
 })();

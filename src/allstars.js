@@ -6,7 +6,7 @@
  * @type precure.Series
  * @const
  */
-precure.now = precure.happinesscharge;
+precure.now = precure.goprincess;
 
 /**
  * 映画 プリキュアオールスターズDX みんなともだちっ☆奇跡の全員大集合!
@@ -65,6 +65,14 @@ precure.ns2 = new precure.Series("映画 プリキュアオールスターズNew
  * @type precure.Series
  */
 precure.ns3 = new precure.Series("映画 プリキュアオールスターズNewStage3 永遠のともだち", new Date("Sat Mar 15 2014 00:00:00 GMT+0900 (JST)"), null);
+
+/**
+ * 映画 プリキュアオールスターズ 春のカーニバル
+ *
+ * @constant
+ * @type precure.Series
+ */
+precure.springCarnival = new precure.Series("映画 プリキュアオールスターズ 春のカーニバル", new Date("Sat Mar 14 2015 00:00:00 GMT+0900 (JST)"), null);
 
 /**
  * 全プリキュアの配列

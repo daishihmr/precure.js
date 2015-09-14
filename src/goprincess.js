@@ -18,7 +18,7 @@ var girl0 = new precure.Girl([
     "キュアフローラ"
 ], [
     null,
-    "プリキュア、プリンセスエンゲージ!\n咲きほこる花のプリンセス! キュアフローラ!\n冷たい檻に閉ざされた夢、返していただきますわ!\nお覚悟は、よろしくて?"
+    "プリキュア、プリンセスエンゲージ!\n咲きほこる花のプリンセス! キュアフローラ!"
 ]);
 
 var girl1 = new precure.Girl([
@@ -26,7 +26,7 @@ var girl1 = new precure.Girl([
     "キュアマーメイド"
 ], [
     null,
-    "プリキュア、プリンセスエンゲージ!\n澄みわたる海のプリンセス! キュアマーメイド!\n冷たい檻に閉ざされた夢、返していただきますわ!\nお覚悟は、よろしくて?"
+    "プリキュア、プリンセスエンゲージ!\n澄みわたる海のプリンセス! キュアマーメイド!"
 ]);
 
 var girl2 = new precure.Girl([
@@ -34,7 +34,7 @@ var girl2 = new precure.Girl([
     "キュアトゥインクル"
 ], [
     null,
-    "プリキュア、プリンセスエンゲージ!\nきらめく星のプリンセス! キュアトゥインクル!\n冷たい檻に閉ざされた夢、返していただきますわ!\nお覚悟は、よろしくて?"
+    "プリキュア、プリンセスエンゲージ!\nきらめく星のプリンセス! キュアトゥインクル!"
 ]);
 
 var girl3 = new precure.Girl([
@@ -42,7 +42,7 @@ var girl3 = new precure.Girl([
     "キュアスカーレット"
 ], [
     null,
-    "プリキュア、プリンセスエンゲージ!\n深紅の炎のプリンセス! キュアスカーレット!\n冷たい檻に閉ざされた夢、返していただきますわ!\nお覚悟決めなさい!"
+    "プリキュア、プリンセスエンゲージ!\n深紅の炎のプリンセス! キュアスカーレット!"
 ]);
 
 precure.goprincess.girls[0] = girl0;
@@ -62,5 +62,21 @@ girl2.setExtraData({
 girl3.setExtraData({
     "cv": "沢城みゆき"
 });
+
+var team = new precure.Team(4);
+team.add(girl0);
+team.add(girl1);
+team.add(girl2);
+team.add(girl3);
+team.leader = girl0;
+team.on("completed", function() {
+    if (this.leader == girl3) {
+        precure.out("冷たい檻に閉ざされた夢、返していただきますわ!\nお覚悟は、決めなさい!");
+    } else {
+        precure.out("冷たい檻に閉ざされた夢、返していただきますわ!\nお覚悟は、よろしくて?");
+    }
+});
+
+precure.goprincess.team = team;
 
 })();
