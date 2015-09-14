@@ -6,7 +6,11 @@
  * @constant
  * @type precure.Series
  */
-precure.maxheart = new precure.Series("ふたりはプリキュア Max Heart", new Date("Sun Feb 06 2005 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 29 2006 08:30:00 GMT+0900 (JST)"));
+precure.maxheart = new precure.Series(
+    "ふたりはプリキュア Max Heart",
+    new Date("Sun Feb 06 2005 08:30:00 GMT+0900 (JST)"),
+    new Date("Sun Jan 29 2006 09:00:00 GMT+0900 (JST)")
+);
 precure.series.push(precure.maxheart);
 
 var msg = "デュアル・オーロラ・ウェイブ！\n光の使者キュアブラック！\n光の使者キュアホワイト！\nふたりはプリキュア！"

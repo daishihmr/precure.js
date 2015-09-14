@@ -6,7 +6,11 @@
  * @constant
  * @type precure.Series
  */
-precure.smile = new precure.Series("スマイルプリキュア!", new Date("Sun Feb 05 2012 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 27 2013 00:00:00 GMT+0900 (JST)"));
+precure.smile = new precure.Series(
+    "スマイルプリキュア!",
+    new Date("Sun Feb 05 2012 08:30:00 GMT+0900 (JST)"),
+    new Date("Sun Jan 27 2013 09:00:00 GMT+0900 (JST)")
+);
 precure.series.push(precure.smile);
 
 var miyuki = new precure.Girl([

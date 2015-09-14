@@ -6,7 +6,11 @@
  * @constant
  * @type precure.Series
  */
-precure.unmarked = new precure.Series("ふたりはプリキュア", new Date("Sun Feb 01 2004 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 30 2005 08:30:00 GMT+0900 (JST)"));
+precure.unmarked = new precure.Series(
+    "ふたりはプリキュア",
+    new Date("Sun Feb 01 2004 08:30:00 GMT+0900 (JST)"),
+    new Date("Sun Jan 30 2005 09:00:00 GMT+0900 (JST)")
+);
 precure.series.push(precure.unmarked);
 
 var msg = "デュアル・オーロラ・ウェイブ！\n光の使者キュアブラック！\n光の使者キュアホワイト！\nふたりはプリキュア！";

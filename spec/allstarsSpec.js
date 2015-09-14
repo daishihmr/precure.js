@@ -1,7 +1,7 @@
 describe("test allstars", function() {
 
     it("オールスターズ", function() {
-        expect(precure.allStars.length).toEqual(38);
+        expect(precure.allStars.length).toEqual(42);
     });
 
 });

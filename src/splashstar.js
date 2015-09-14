@@ -6,7 +6,11 @@
  * @constant
  * @type precure.Series
  */
-precure.splashstar = new precure.Series("ふたりはプリキュア Splash Star", new Date("Sun Feb 05 2006 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 28 2007 08:30:00 GMT+0900 (JST)"));
+precure.splashstar = new precure.Series(
+    "ふたりはプリキュア Splash Star",
+    new Date("Sun Feb 05 2006 08:30:00 GMT+0900 (JST)"),
+    new Date("Sun Jan 28 2007 09:00:00 GMT+0900 (JST)")
+);
 precure.series.push(precure.splashstar);
 
 var common = "聖なる泉を汚す者よ！\nアコギな真似はおやめなさい！";

@@ -12,6 +12,7 @@ module.exports = function(grunt) {
         'src/smile.js',
         'src/dokidoki.js',
         'src/happinesscharge.js',
+        'src/goprincess.js',
         'src/allstars.js'
     ];
 

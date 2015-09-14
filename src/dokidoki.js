@@ -6,7 +6,11 @@
  * @constant
  * @type precure.Series
  */
-precure.dokidoki = new precure.Series("ドキドキ!プリキュア", new Date("Sun Feb 03 2013 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 26 2014 08:30:00 GMT+0900 (JST)"));
+precure.dokidoki = new precure.Series(
+    "ドキドキ!プリキュア",
+    new Date("Sun Feb 03 2013 08:30:00 GMT+0900 (JST)"),
+    new Date("Sun Jan 26 2014 09:00:00 GMT+0900 (JST)")
+);
 precure.series.push(precure.dokidoki);
 
 var mana = new precure.Girl([

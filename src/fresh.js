@@ -6,7 +6,11 @@
  * @constant
  * @type precure.Series
  */
-precure.fresh = new precure.Series("フレッシュプリキュア!", new Date("Sun Feb 01 2009 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 31 2010 08:30:00 GMT+0900 (JST)"));
+precure.fresh = new precure.Series(
+    "フレッシュプリキュア!",
+    new Date("Sun Feb 01 2009 08:30:00 GMT+0900 (JST)"),
+    new Date("Sun Jan 31 2010 09:00:00 GMT+0900 (JST)")
+);
 precure.series.push(precure.fresh);
 
 var love = new precure.Girl([

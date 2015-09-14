@@ -6,7 +6,11 @@
  * @constant
  * @type precure.Series
  */
-precure.happinesscharge = new precure.Series("ハピネスチャージプリキュア!", new Date("Sun Feb 02 2014 08:30:00 GMT+0900 (JST)"), null);
+precure.happinesscharge = new precure.Series(
+    "ハピネスチャージプリキュア!",
+    new Date("Sun Feb 02 2014 08:30:00 GMT+0900 (JST)"),
+    new Date("Sun Jan 25 2015 09:00:00 GMT+0900 (JST)")
+);
 precure.series.push(precure.happinesscharge);
 
 var megumi = new precure.Girl([
@@ -25,7 +29,7 @@ var hime = new precure.Girl([
     "プリキュア・くるりんミラーチェンジ！\n天空に舞う蒼き風！キュアプリンセス！"
 ]);
 
-var girl3 = new precure.Girl([
+var yuyu = new precure.Girl([
     "大森ゆうこ",
     "キュアハニー"
 ], [
@@ -33,7 +37,7 @@ var girl3 = new precure.Girl([
     "プリキュア・くるりんミラーチェンジ！\n大地に実る命の光！キュアハニー！"
 ]);
 
-var girl4 = new precure.Girl([
+var iona = new precure.Girl([
     "氷川いおな",
     "キュアフォーチュン"
 ], [
@@ -43,8 +47,8 @@ var girl4 = new precure.Girl([
 
 precure.happinesscharge.girls[0] = megumi;
 precure.happinesscharge.girls[1] = hime;
-precure.happinesscharge.girls[2] = girl3;
-precure.happinesscharge.girls[3] = girl4;
+precure.happinesscharge.girls[2] = yuyu;
+precure.happinesscharge.girls[3] = iona;
 
 megumi.setExtraData({
     "cv": "中島愛"
@@ -53,10 +57,10 @@ hime.setExtraData({
     "cv": "潘めぐみ",
     "realName": "ヒメルダ・ウインドウ・キュアクイーン・オブ・ザ・ブルースカイ"
 });
-girl3.setExtraData({
+yuyu.setExtraData({
     "cv": "北川里奈"
 });
-girl4.setExtraData({
+iona.setExtraData({
     "cv": "戸松遥"
 });
 

@@ -6,7 +6,11 @@
  * @constant
  * @type precure.Series
  */
-precure.fivegogo = new precure.Series("Yes! プリキュア5GoGo!", new Date("Sun Feb 03 2008 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 25 2009 08:30:00 GMT+0900 (JST)"));
+precure.fivegogo = new precure.Series(
+    "Yes! プリキュア5GoGo!",
+    new Date("Sun Feb 03 2008 08:30:00 GMT+0900 (JST)"),
+    new Date("Sun Jan 25 2009 09:00:00 GMT+0900 (JST)")
+);
 precure.series.push(precure.fivegogo);
 
 var nozomi = new precure.Girl([

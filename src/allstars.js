@@ -83,7 +83,8 @@ precure.allStars = [];
     "smile",
     "ns1",
     "dokidoki",
-    "happinesscharge"
+    "happinesscharge",
+    "goprincess",
 ].forEach(function(s) {
     Array.prototype.push.apply(precure.allStars, precure[s].girls);
 });

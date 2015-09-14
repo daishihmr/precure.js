@@ -174,7 +174,11 @@ precure.PartnerInvalidError.prototype = new Error("partner is invalid.");
  * @constant
  * @type precure.Series
  */
-precure.unmarked = new precure.Series("ふたりはプリキュア", new Date("Sun Feb 01 2004 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 30 2005 08:30:00 GMT+0900 (JST)"));
+precure.unmarked = new precure.Series(
+    "ふたりはプリキュア",
+    new Date("Sun Feb 01 2004 08:30:00 GMT+0900 (JST)"),
+    new Date("Sun Jan 30 2005 09:00:00 GMT+0900 (JST)")
+);
 precure.series.push(precure.unmarked);
 
 var msg = "デュアル・オーロラ・ウェイブ！\n光の使者キュアブラック！\n光の使者キュアホワイト！\nふたりはプリキュア！";
@@ -217,7 +221,11 @@ white.setExtraData({
  * @constant
  * @type precure.Series
  */
-precure.maxheart = new precure.Series("ふたりはプリキュア Max Heart", new Date("Sun Feb 06 2005 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 29 2006 08:30:00 GMT+0900 (JST)"));
+precure.maxheart = new precure.Series(
+    "ふたりはプリキュア Max Heart",
+    new Date("Sun Feb 06 2005 08:30:00 GMT+0900 (JST)"),
+    new Date("Sun Jan 29 2006 09:00:00 GMT+0900 (JST)")
+);
 precure.series.push(precure.maxheart);
 
 var msg = "デュアル・オーロラ・ウェイブ！\n光の使者キュアブラック！\n光の使者キュアホワイト！\nふたりはプリキュア！"
@@ -273,7 +281,11 @@ luminus.setExtraData({
  * @constant
  * @type precure.Series
  */
-precure.splashstar = new precure.Series("ふたりはプリキュア Splash Star", new Date("Sun Feb 05 2006 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 28 2007 08:30:00 GMT+0900 (JST)"));
+precure.splashstar = new precure.Series(
+    "ふたりはプリキュア Splash Star",
+    new Date("Sun Feb 05 2006 08:30:00 GMT+0900 (JST)"),
+    new Date("Sun Jan 28 2007 09:00:00 GMT+0900 (JST)")
+);
 precure.series.push(precure.splashstar);
 
 var common = "聖なる泉を汚す者よ！\nアコギな真似はおやめなさい！";
@@ -322,7 +334,11 @@ mai.setExtraData({
  * @constant
  * @type precure.Series
  */
-precure.five = new precure.Series("Yes! プリキュア5", new Date("Sun Feb 04 2007 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 27 2008 08:30:00 GMT+0900 (JST)"));
+precure.five = new precure.Series(
+    "Yes! プリキュア5",
+    new Date("Sun Feb 04 2007 08:30:00 GMT+0900 (JST)"),
+    new Date("Sun Jan 27 2008 09:00:00 GMT+0900 (JST)")
+);
 precure.series.push(precure.five);
 
 var nozomi = new precure.Girl([
@@ -397,7 +413,11 @@ karen.setExtraData({
  * @constant
  * @type precure.Series
  */
-precure.fivegogo = new precure.Series("Yes! プリキュア5GoGo!", new Date("Sun Feb 03 2008 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 25 2009 08:30:00 GMT+0900 (JST)"));
+precure.fivegogo = new precure.Series(
+    "Yes! プリキュア5GoGo!",
+    new Date("Sun Feb 03 2008 08:30:00 GMT+0900 (JST)"),
+    new Date("Sun Jan 25 2009 09:00:00 GMT+0900 (JST)")
+);
 precure.series.push(precure.fivegogo);
 
 var nozomi = new precure.Girl([
@@ -484,7 +504,11 @@ kurumi.setExtraData({
  * @constant
  * @type precure.Series
  */
-precure.fresh = new precure.Series("フレッシュプリキュア!", new Date("Sun Feb 01 2009 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 31 2010 08:30:00 GMT+0900 (JST)"));
+precure.fresh = new precure.Series(
+    "フレッシュプリキュア!",
+    new Date("Sun Feb 01 2009 08:30:00 GMT+0900 (JST)"),
+    new Date("Sun Jan 31 2010 09:00:00 GMT+0900 (JST)")
+);
 precure.series.push(precure.fresh);
 
 var love = new precure.Girl([
@@ -547,7 +571,11 @@ setsuna.setExtraData({
  * @constant
  * @type precure.Series
  */
-precure.heartcatch = new precure.Series("ハートキャッチプリキュア!", new Date("Sun Feb 07 2010 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 30 2011 08:30:00 GMT+0900 (JST)"));
+precure.heartcatch = new precure.Series(
+    "ハートキャッチプリキュア!",
+    new Date("Sun Feb 07 2010 08:30:00 GMT+0900 (JST)"),
+    new Date("Sun Jan 30 2011 09:00:00 GMT+0900 (JST)")
+);
 precure.series.push(precure.heartcatch);
 
 var tsubomi = new precure.Girl([
@@ -610,7 +638,11 @@ yuri.setExtraData({
  * @constant
  * @type precure.Series
  */
-precure.suite = new precure.Series("スイートプリキュア♪", new Date("Sun Feb 06 2011 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 29 2012 08:30:00 GMT+0900 (JST)"));
+precure.suite = new precure.Series(
+    "スイートプリキュア♪",
+    new Date("Sun Feb 06 2011 08:30:00 GMT+0900 (JST)"),
+    new Date("Sun Jan 29 2012 09:00:00 GMT+0900 (JST)")
+);
 precure.series.push(precure.suite);
 
 var msg = "レッツプレイ！プリキュア・モジュレーション！\n爪弾くは荒ぶる調べ！キュアメロディ！\n爪弾くはたおやかな調べ！キュアリズム！";
@@ -675,7 +707,11 @@ ako.setExtraData({
  * @constant
  * @type precure.Series
  */
-precure.smile = new precure.Series("スマイルプリキュア!", new Date("Sun Feb 05 2012 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 27 2013 00:00:00 GMT+0900 (JST)"));
+precure.smile = new precure.Series(
+    "スマイルプリキュア!",
+    new Date("Sun Feb 05 2012 08:30:00 GMT+0900 (JST)"),
+    new Date("Sun Jan 27 2013 09:00:00 GMT+0900 (JST)")
+);
 precure.series.push(precure.smile);
 
 var miyuki = new precure.Girl([
@@ -750,7 +786,11 @@ reika.setExtraData({
  * @constant
  * @type precure.Series
  */
-precure.dokidoki = new precure.Series("ドキドキ!プリキュア", new Date("Sun Feb 03 2013 08:30:00 GMT+0900 (JST)"), new Date("Sun Jan 26 2014 08:30:00 GMT+0900 (JST)"));
+precure.dokidoki = new precure.Series(
+    "ドキドキ!プリキュア",
+    new Date("Sun Feb 03 2013 08:30:00 GMT+0900 (JST)"),
+    new Date("Sun Jan 26 2014 09:00:00 GMT+0900 (JST)")
+);
 precure.series.push(precure.dokidoki);
 
 var mana = new precure.Girl([
@@ -825,7 +865,11 @@ aguri.setExtraData({
  * @constant
  * @type precure.Series
  */
-precure.happinesscharge = new precure.Series("ハピネスチャージプリキュア!", new Date("Sun Feb 02 2014 08:30:00 GMT+0900 (JST)"), null);
+precure.happinesscharge = new precure.Series(
+    "ハピネスチャージプリキュア!",
+    new Date("Sun Feb 02 2014 08:30:00 GMT+0900 (JST)"),
+    new Date("Sun Jan 25 2015 09:00:00 GMT+0900 (JST)")
+);
 precure.series.push(precure.happinesscharge);
 
 var megumi = new precure.Girl([
@@ -844,7 +888,7 @@ var hime = new precure.Girl([
     "プリキュア・くるりんミラーチェンジ！\n天空に舞う蒼き風！キュアプリンセス！"
 ]);
 
-var girl3 = new precure.Girl([
+var yuyu = new precure.Girl([
     "大森ゆうこ",
     "キュアハニー"
 ], [
@@ -852,7 +896,7 @@ var girl3 = new precure.Girl([
     "プリキュア・くるりんミラーチェンジ！\n大地に実る命の光！キュアハニー！"
 ]);
 
-var girl4 = new precure.Girl([
+var iona = new precure.Girl([
     "氷川いおな",
     "キュアフォーチュン"
 ], [
@@ -862,8 +906,8 @@ var girl4 = new precure.Girl([
 
 precure.happinesscharge.girls[0] = megumi;
 precure.happinesscharge.girls[1] = hime;
-precure.happinesscharge.girls[2] = girl3;
-precure.happinesscharge.girls[3] = girl4;
+precure.happinesscharge.girls[2] = yuyu;
+precure.happinesscharge.girls[3] = iona;
 
 megumi.setExtraData({
     "cv": "中島愛"
@@ -872,11 +916,78 @@ hime.setExtraData({
     "cv": "潘めぐみ",
     "realName": "ヒメルダ・ウインドウ・キュアクイーン・オブ・ザ・ブルースカイ"
 });
-girl3.setExtraData({
+yuyu.setExtraData({
     "cv": "北川里奈"
 });
-girl4.setExtraData({
+iona.setExtraData({
     "cv": "戸松遥"
+});
+
+})();
+
+(function() {
+
+/**
+ * Go!プリンセスプリキュア
+ *
+ * @constant
+ * @type precure.Series
+ */
+precure.goprincess = new precure.Series(
+    "Go!プリンセスプリキュア",
+    new Date("Sun Feb 01 2015 08:30:00 GMT+0900 (JST)"),
+    null
+);
+precure.series.push(precure.goprincess);
+
+var girl0 = new precure.Girl([
+    "春野はるか",
+    "キュアフローラ"
+], [
+    null,
+    "プリキュア、プリンセスエンゲージ!\n咲きほこる花のプリンセス! キュアフローラ!\n冷たい檻に閉ざされた夢、返していただきますわ!\nお覚悟は、よろしくて?"
+]);
+
+var girl1 = new precure.Girl([
+    "海藤みなみ",
+    "キュアマーメイド"
+], [
+    null,
+    "プリキュア、プリンセスエンゲージ!\n澄みわたる海のプリンセス! キュアマーメイド!\n冷たい檻に閉ざされた夢、返していただきますわ!\nお覚悟は、よろしくて?"
+]);
+
+var girl2 = new precure.Girl([
+    "天ノ川きらら",
+    "キュアトゥインクル"
+], [
+    null,
+    "プリキュア、プリンセスエンゲージ!\nきらめく星のプリンセス! キュアトゥインクル!\n冷たい檻に閉ざされた夢、返していただきますわ!\nお覚悟は、よろしくて?"
+]);
+
+var girl3 = new precure.Girl([
+    "紅城トワ",
+    "キュアスカーレット"
+], [
+    null,
+    "プリキュア、プリンセスエンゲージ!\n深紅の炎のプリンセス! キュアスカーレット!\n冷たい檻に閉ざされた夢、返していただきますわ!\nお覚悟決めなさい!"
+]);
+
+precure.goprincess.girls[0] = girl0;
+precure.goprincess.girls[1] = girl1;
+precure.goprincess.girls[2] = girl2;
+precure.goprincess.girls[3] = girl3;
+
+girl0.setExtraData({
+    "cv": "嶋村侑"
+});
+girl1.setExtraData({
+    "cv": "浅野真澄",
+});
+girl2.setExtraData({
+    "cv": "山村響"
+});
+girl3.setExtraData({
+    "cv": "沢城みゆき"
 });
 
 })();
@@ -966,11 +1077,12 @@ precure.allStars = [];
     "smile",
     "ns1",
     "dokidoki",
-    "happinesscharge"
+    "happinesscharge",
+    "goprincess",
 ].forEach(function(s) {
     Array.prototype.push.apply(precure.allStars, precure[s].girls);
 });
 
 })();
 
-exports.precure = precure;
+module.exports = precure;
