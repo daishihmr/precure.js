@@ -45,7 +45,8 @@ precure.Series.TITLES = [
     "suite",
     "smile",
     "dokidoki",
-    "happinesscharge"
+    "happinesscharge",
+    "goprincess",
 ];
 
 /**

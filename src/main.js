@@ -45,7 +45,8 @@ precure.Series.TITLES = [
     "suite",
     "smile",
     "dokidoki",
-    "happinesscharge"
+    "happinesscharge",
+    "goprincess",
 ];
 
 /**
@@ -119,15 +120,16 @@ precure.Girl.prototype.transform = function(partner) {
     if (this.partner !== undefined && (partner === undefined || this.partner !== partner.humanName)) {
         throw new precure.PartnerInvalidError();
     }
-
-    this.state = Math.min(this.state + 1, this.names.length - 1);
-    this._updateState();
-    if (partner) {
-        partner.state = Math.min(partner.state + 1, partner.names.length - 1);
-        partner._updateState();
+    if (this.names.length - 1 <= this.state) {
+        throw new Error();
     }
 
-    return this.transformMessages[this.state] || null;
+    this._updateState(this.state + 1);
+    if (partner) {
+        partner._updateState(partner.state + 1);
+    }
+
+    return this.transformMessages[this.state];
 };
 
 precure.Girl.prototype.toString = function() {
@@ -140,8 +142,7 @@ precure.Girl.prototype.toString = function() {
  * @methodOf precure.Girl
  */
 precure.Girl.prototype.humanize = function() {
-    this.state = 0;
-    this._updateState();
+    this._updateState(0);
 };
 
 /**
@@ -150,7 +151,8 @@ precure.Girl.prototype.humanize = function() {
  * @private
  * @methodOf precure.Girl
  */
-precure.Girl.prototype._updateState = function() {
+precure.Girl.prototype._updateState = function(state) {
+    this.state = state;
     this.name = this.names[this.state];
 };
 
